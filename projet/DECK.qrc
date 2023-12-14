@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/deck">
+        <file>deckEcran.png</file>
+    </qresource>
+</RCC>

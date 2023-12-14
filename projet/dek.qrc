@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/dekp">
+        <file>dek.jpg</file>
+    </qresource>
+</RCC>
