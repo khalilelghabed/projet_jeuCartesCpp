@@ -1,0 +1,14 @@
+debug/Carte.o
+debug/Group.o
+debug/MonQlabel.o
+debug/VictoryMessage.o
+debug/joueur.o
+debug/main.o
+debug/jeu.o
+debug/qrc_DECK.o
+debug/qrc_cartes.o
+debug/qrc_dek.o
+debug/moc_Carte.o
+debug/moc_MonQlabel.o
+debug/moc_VictoryMessage.o
+debug/moc_jeu.o

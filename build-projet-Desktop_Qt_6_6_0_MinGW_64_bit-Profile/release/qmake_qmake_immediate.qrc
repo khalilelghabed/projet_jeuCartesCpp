@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+<file alias="photos">C:/Users/hp/Desktop/projetCpp/projet/photos</file>
+<file alias="des">C:/Users/hp/Desktop/projetCpp/projet/des</file>
+</qresource>
+</RCC>

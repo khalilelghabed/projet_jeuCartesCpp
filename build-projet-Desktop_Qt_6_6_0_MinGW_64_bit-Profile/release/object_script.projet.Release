@@ -1,0 +1,14 @@
+release/Carte.o
+release/Group.o
+release/MonQlabel.o
+release/VictoryMessage.o
+release/joueur.o
+release/main.o
+release/jeu.o
+release/qrc_DECK.o
+release/qrc_cartes.o
+release/qrc_dek.o
+release/moc_Carte.o
+release/moc_MonQlabel.o
+release/moc_VictoryMessage.o
+release/moc_jeu.o
