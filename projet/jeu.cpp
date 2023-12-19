@@ -10,7 +10,7 @@ MaClasse::MaClasse(QWidget *parent)
     ui->setupUi(this);
    ui->deckLayout->parentWidget()->setStyleSheet("background-image: url(:/dekp/dek.jpg);");
     ui->centralLayout->parentWidget()->setStyleSheet("background-image: url(:/PLAYB/Play.png);");
-     setFixedSize(1262,912);
+
 
 }
 
@@ -20,7 +20,7 @@ MaClasse::~MaClasse()
     delete ui;
 }
 
-
+int MaClasse::test2=0;
 int MaClasse::test=0;
 int MaClasse::J=0;
 int MaClasse::C=0;
@@ -48,7 +48,8 @@ void MaClasse::on_PlayButton_clicked()
     carteCentrale(MaDeck->getCarte());
 
     connect(MaDeck->getqlabel(), &MonQlabel::clicked, [=]() {
-        donnerCarte();
+        if(test==0){
+            donnerCarte();}
         if (MaDeck->getCartes().isEmpty()) {
            MaDeck->getqlabel()->hide();
             ui->deckLayout->addWidget(MaDeck->getqlabel());
@@ -57,7 +58,9 @@ void MaClasse::on_PlayButton_clicked()
 
         }
         QTimer::singleShot(400, [=]() {
+            if(test==0){
             computerJouer();
+            }
         });
        });
 
@@ -190,7 +193,7 @@ Group *MaClasse::creer_deck(){
      deck->ajoutCarte(Z10);
      deck->ajoutCarte(Z11);
      deck->ajoutCarte(Z12);
-     deck->melangerCartes();
+   deck->melangerCartes();
      qDebug()<<"methode correct";
      count=40;
      return deck;
@@ -225,7 +228,7 @@ void MaClasse::ajouterComputer(Carte *A)
 {
      ui->IALayout->setAlignment(Qt::AlignCenter) ;
      ui->IALayout-> addWidget(A,0,Qt::AlignCenter);
-     A->changerimage(":/cartes/photos_des_cartes/images.png");
+
      count--;
       qDebug()<<"valeur de j"<<J;
      C++;
@@ -384,6 +387,8 @@ bool MaClasse::jouerC(Carte *A){
 
 
 
+
+
 bool MaClasse::jouer(Carte *A){
 
      if(A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol() ){
@@ -423,7 +428,7 @@ bool MaClasse::jouer(Carte *A){
 
              return true;}
 
-         else {
+         else if(test==1){
 
 
              if(A->getNumber()==2){
@@ -443,42 +448,42 @@ bool MaClasse::jouer(Carte *A){
                  center=A;
                  J--;
 
-                 QEventLoop loop2;
-                 QTimer::singleShot(400, &loop2, &QEventLoop::quit);
-                 loop2.exec();
-                 ajouterComputer(MaDeck->getCarte());
+                 if(test2==0){
+               ajouterDeuxCarte();
+                     ajouterDeuxCarte();
+                 }
+                 else if(test2==1) {
 
-                 QEventLoop loop3;
-                 QTimer::singleShot(400, &loop3, &QEventLoop::quit);
-                 loop3.exec();
-                 ajouterComputer(MaDeck->getCarte());
+                     for (int var = 0; var < ui->IALayout->count(); ++var) {
+                         QWidget *widget = ui->IALayout->itemAt(var)->widget();
+                         // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+                         Carte *carteWidget = qobject_cast<Carte*>(widget);
+                         if(carteWidget->getNumber()==2){
 
-                 QEventLoop loop4;
-                 QTimer::singleShot(400, &loop4, &QEventLoop::quit);
-                 loop4.exec();
-                 ajouterComputer(MaDeck->getCarte());
+                             test2=1;
+                             QEventLoop loope;
+                             QTimer::singleShot(400, &loope, &QEventLoop::quit);
+                             loope.exec();
+                             bool a=jouerC(carteWidget);
+                             ajouterMoiDeuxCarte();
+                             ajouterMoiDeuxCarte();
+                             ajouterMoiDeuxCarte();
+                             ajouterMoiDeuxCarte();
+
+                         }
+                     }
+                 }
 
 
-                 QEventLoop loop5;
-                 QTimer::singleShot(400, &loop5, &QEventLoop::quit);
-                 loop5.exec();
-                 ajouterComputer(MaDeck->getCarte());
-             }
-             QEventLoop loop6;
-             QTimer::singleShot(400, &loop6, &QEventLoop::quit);
-             loop6.exec();
-             ajouterComputer(MaDeck->getCarte());
-
-             QEventLoop loop7;
-             QTimer::singleShot(400, &loop7, &QEventLoop::quit);
-             loop7.exec();
-             ajouterComputer(MaDeck->getCarte());
+               test=0;
 
              Double(A);
              qDebug()<<"bien jouer"<<J;
              test=0;
              return true;
          }
+         }
+
      }
 
      else{
@@ -490,14 +495,14 @@ bool MaClasse::jouer(Carte *A){
      }
      qDebug()<<"valeur de j"<<J;
      return false;
-}
+     }
 
 
 
 
 
 
-    bool MaClasse:: computerJouer(){
+    bool MaClasse:: computerJouer()   {
      bool cond=false;
    do {
           cond=false;
@@ -532,9 +537,10 @@ bool MaClasse::jouer(Carte *A){
     QString textLabel = QString::number(count);
     ui->labelCount->setText(textLabel);
 
-    return false;
-return false;
-   }
+    return false;}
+
+
+
     void MaClasse::Double(Carte *A)
     {
 if(A->getNumber()==2){
@@ -544,20 +550,16 @@ if(A->getNumber()==2){
             // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
             Carte *carteWidget = qobject_cast<Carte*>(widget);
             if(carteWidget->getNumber()==2){
-
+                QEventLoop loope;
+                QTimer::singleShot(400, &loope, &QEventLoop::quit);
+                loope.exec();
                 v=jouerC(carteWidget);
+                break;
             }
 
         }
         if(v==false){
-            QEventLoop loop0;
-            QTimer::singleShot(400, &loop0, &QEventLoop::quit);
-            loop0.exec();
-            ajouterComputer(MaDeck->getCarte());
-            QEventLoop loop1;
-            QTimer::singleShot(400, &loop1, &QEventLoop::quit);
-            loop1.exec();
-            ajouterComputer(MaDeck->getCarte());
+            ajouterDeuxCarte();
 
         }
         else {
@@ -571,32 +573,53 @@ if(A->getNumber()==2){
                     v2=true;
                 }}
             if(v2==false){
-                QEventLoop loop2;
-                QTimer::singleShot(400, &loop2, &QEventLoop::quit);
-                loop2.exec();
-                ajouterMainJoueur(MaDeck->getCarte());
-
-                QEventLoop loop3;
-                QTimer::singleShot(400, &loop3, &QEventLoop::quit);
-                loop3.exec();
-                ajouterMainJoueur(MaDeck->getCarte());
-
-                QEventLoop loop4;
-                QTimer::singleShot(400, &loop4, &QEventLoop::quit);
-                loop4.exec();
-                ajouterMainJoueur(MaDeck->getCarte());
+              ajouterMoiDeuxCarte();
+                ajouterMoiDeuxCarte();
+            }
+            else if(v2==true){
+                bool v3=false;
+                for (int var = 0; var < ui->IALayout->count(); ++var) {
+                    QWidget *widget = ui->IALayout->itemAt(var)->widget();
+                    // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+                    Carte *carteWidget = qobject_cast<Carte*>(widget);
+                    if(carteWidget->getNumber()==2){
+                        v3=true;
+                        test2=1;
 
 
-                QEventLoop loop5;
-                QTimer::singleShot(400, &loop4, &QEventLoop::quit);
-                loop5.exec();
-                ajouterMainJoueur(MaDeck->getCarte());
+                    }
+                }
+
             }
 
 
         }}
     }
 
+    void MaClasse::ajouterDeuxCarte()
+    {
+QEventLoop loop0;
+QTimer::singleShot(400, &loop0, &QEventLoop::quit);
+loop0.exec();
+ajouterComputer(MaDeck->getCarte());
+QEventLoop loop1;
+QTimer::singleShot(400, &loop1, &QEventLoop::quit);
+loop1.exec();
+ajouterComputer(MaDeck->getCarte());
 
+    }
+
+    void MaClasse::ajouterMoiDeuxCarte() {
+QEventLoop loop2;
+QTimer::singleShot(400, &loop2, &QEventLoop::quit);
+loop2.exec();
+ajouterMainJoueur(MaDeck->getCarte());
+
+QEventLoop loop3;
+QTimer::singleShot(400, &loop3, &QEventLoop::quit);
+loop3.exec();
+ajouterMainJoueur(MaDeck->getCarte());
+
+    }
 
 

@@ -35,6 +35,8 @@ public:
     bool computerJouer();
     bool jouerC(Carte *A);
     void Double(Carte *A);
+    void ajouterDeuxCarte();
+    void ajouterMoiDeuxCarte();
 
 
 public slots:
@@ -45,6 +47,8 @@ private slots:
 
     void on_PlayButton_clicked();
 
+
+    void on_p_clicked();
 
 private:
     Ui::MaClasse *ui;
@@ -58,6 +62,7 @@ private:
     static int J;
       static int C;
     static int test;
+      static int test2;
 
 
 
