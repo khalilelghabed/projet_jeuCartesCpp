@@ -22,16 +22,34 @@ void Group::melangerCartes()
 }
 Carte *Group::getCarte() {
     if(!cartes.isEmpty()){
-        return this->cartes.takeFirst()  ;
+        return this->cartes.takeFirst();
+
         }
     else
         qDebug()<<"la group est vide";
         return nullptr;
 
+
+}
+
+
+
+int Group::transformer(Group *autreGroup)
+{
+        int num=0;
+         qDebug()<<"les nombres des cartes dans la deck est"<<num;
+        while(!autreGroup->getCartes().isEmpty()){
+         qDebug()<<"les nombres des cartes dans la deck est"<<num;
+        this->ajoutCarte(autreGroup->getCarte());
+        num++;
+        }
+
+        return num;
 }
 
 MonQlabel *Group::getqlabel(){
-    return labeldeck;
+        return labeldeck;
+
 }
 
 
@@ -52,10 +70,6 @@ void Group::initImage(const QString &imagePath)
     // Ajoutez votre labeldeck au layout existant plutôt que d'en créer un nouveau
 
 }
- QList<Carte*> Group::getCartes() const {
-    qDebug()<<"vrai";
-    if (cartes.isEmpty()){
-        qDebug()<<"vrai";    }
+const QList<Carte*>& Group::getCartes() const {
     return cartes;
-
 }

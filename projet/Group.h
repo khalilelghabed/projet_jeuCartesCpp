@@ -16,9 +16,13 @@ public:
     void melangerCartes();
     Carte *getCarte() ;
 
+    int transformer(Group *autreGroup);
+
+
+
     MonQlabel *getqlabel();
      void initImage(const QString &imagePath);
-    QList<Carte*> getCartes() const;
+    const QList<Carte*>& getCartes() const;
 
 private:
     MonQlabel *labeldeck;

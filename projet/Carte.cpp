@@ -129,7 +129,7 @@ void Carte::retournerImage()
                     changerimage( ":/cartes/photos_des_cartes/Z2.jpg");
                     break;
                 case 3:
-                    changerimage( ":/cartes/photos_des_cartes/D3.jpg");
+                    changerimage( ":/cartes/photos_des_cartes/Z3.jpg");
                     break;
                 case 4:
                     changerimage( ":/cartes/photos_des_cartes/Z4.jpg");

@@ -34,6 +34,7 @@ public:
     void distrubtionCartes();
     bool computerJouer();
     bool jouerC(Carte *A);
+    void Double(Carte *A);
 
 
 public slots:
@@ -45,21 +46,20 @@ private slots:
     void on_PlayButton_clicked();
 
 
-    void on_PlayButton_3_clicked();
-
-    void on_PlayButton_5_clicked();
-
 private:
     Ui::MaClasse *ui;
     Carte *macarte;
     QListWidget *cartesList;
     Group *MaDeck;
-    Group *MasecendDeck;
+    Group *secendDeck=new Group();
+
     static int count;
       static Carte *center;
     static int J;
       static int C;
     static int test;
+
+
 
 
 };
