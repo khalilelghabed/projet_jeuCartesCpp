@@ -80,6 +80,7 @@ public:
         font.setItalic(true);
         labelCount->setFont(font);
         labelCount->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-image: url(:/cartes/photos_des_cartes/BOTON.jpg);\n"
 ""));
         verticalLayoutWidget_2 = new QWidget(centralwidget);
         verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
