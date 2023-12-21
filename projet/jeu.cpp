@@ -22,6 +22,7 @@ MaClasse::~MaClasse()
 
 int MaClasse::test2=0;
 int MaClasse::test=0;
+int MaClasse::test3=0;
 int MaClasse::J=0;
 int MaClasse::C=0;
 int MaClasse::count=0;
@@ -228,7 +229,7 @@ void MaClasse::ajouterComputer(Carte *A)
 {
      ui->IALayout->setAlignment(Qt::AlignCenter) ;
      ui->IALayout-> addWidget(A,0,Qt::AlignCenter);
-     A->changerimage(":/cartes/photos_des_cartes/images.png");
+    // A->changerimage(":/cartes/photos_des_cartes/images.png");
      count--;
       qDebug()<<"valeur de j"<<J;
      C++;
@@ -393,7 +394,7 @@ bool MaClasse::jouer(Carte *A){
 
      if(A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol() ){
 
-         if(test==0){
+         if(test==0 &&test3==0){
              A->retournerImage();
 
              Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
@@ -427,6 +428,30 @@ bool MaClasse::jouer(Carte *A){
              qDebug()<<"valeur de j"<<J;
               qDebug()<<"hy 3";
              return true;}
+         else if(test3==1){
+
+             if(A->getNumber()==2){
+                 Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
+                 B->retournerImage();
+                 secendDeck->ajoutCarte(B);
+                 QLayoutItem *item;
+                 while ((item = ui->centralLayout->takeAt(0)) != nullptr) {
+                     delete item->widget();  // Supprime l'objet associé au widget
+                     delete item;  // Supprime l'objet de mise en page
+
+                 }
+
+
+                 // Ajouter le nouveau widget au layout
+                 ui->centralLayout->addWidget(A);
+                 center=A;
+                 J--;
+
+                 if(test2==0){
+                     ajouterDeuxCarte();
+                     ajouterDeuxCarte();
+                 }
+             }}
 
          else if(test==1){
 
@@ -463,7 +488,7 @@ bool MaClasse::jouer(Carte *A){
                              QEventLoop loope;
                              QTimer::singleShot(400, &loope, &QEventLoop::quit);
                              loope.exec();
-                             bool a=jouerC(carteWidget);
+                            jouerC(carteWidget);
                              ajouterMoiDeuxCarte();
                              ajouterMoiDeuxCarte();
                              ajouterMoiDeuxCarte();
@@ -512,6 +537,12 @@ bool MaClasse::jouer(Carte *A){
             Carte *carteWidget = qobject_cast<Carte*>(widget);
 
             bool i = jouerC(carteWidget);
+            if(carteWidget->getNumber()==2 && i==true){
+             doubleComputer();
+
+
+
+            }
 
             qDebug() << "Type réel du widget à la position" << var << ":" << carteWidget->metaObject()->className();
             qDebug() << carteWidget->getNumber();
@@ -599,6 +630,8 @@ ajouterMainJoueur(MaDeck->getCarte());
     }
 
 
+
+
 bool MaClasse::haveComputerCarte()
 {
 for (int var = 0; var < ui->IALayout->count(); ++var) {
@@ -619,10 +652,8 @@ return false ; }
 bool MaClasse::haveCarte()
 {
 for (int var = 0; var < ui->joeurLayout->count(); ++var) {
-        qDebug()<<"hy";
         QWidget *widget = ui->joeurLayout->itemAt(var)->widget();
 
-        qDebug()<<"hy 2";
         // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
         Carte *carteWidget = qobject_cast<Carte*>(widget);
 
@@ -634,6 +665,34 @@ for (int var = 0; var < ui->joeurLayout->count(); ++var) {
 
 
         }}
-}
 
+    return false;
+}
+void MaClasse::doubleComputer()
+{
+bool a =haveCarte();
+if(a==false){
+        ajouterMoiDeuxCarte();
+        QEventLoop loope;
+        QTimer::singleShot(400, &loope, &QEventLoop::quit);
+        loope.exec();
+        computerJouer();
+
+        }
+/*
+else if (a==true){
+        bool b=haveComputerCarte();
+        if(b==false){
+             test3=1;
+        }
+        else if (b==true){
+             bool c=haveCarte();
+             if(c==false){
+                ajouterMoiDeuxCarte();
+                ajouterMoiDeuxCarte();
+                ajouterMoiDeuxCarte();
+             }
+        }
+}*/
+}
 

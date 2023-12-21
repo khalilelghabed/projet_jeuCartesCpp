@@ -64,12 +64,10 @@ private:
       static Carte *center;
     static int J;
       static int C;
-    static int test;
-      static int test2;
-    static int etat;
-
-
-
+    static int test; //tester si on a a la premier etape de double pour joueur
+     static int test2;  //test si on a à la deuxime etape de double pour joueur
+    static int test3; // meme chose mais pour le double qui commence par lordinateur
+     static int test4;
 };
 
 
