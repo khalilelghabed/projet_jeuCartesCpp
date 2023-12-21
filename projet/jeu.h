@@ -37,6 +37,9 @@ public:
     void Double(Carte *A);
     void ajouterDeuxCarte();
     void ajouterMoiDeuxCarte();
+    void doubleComputer();
+     bool  haveCarte();
+    bool haveComputerCarte();
 
 
 public slots:
@@ -48,7 +51,7 @@ private slots:
     void on_PlayButton_clicked();
 
 
-    void on_p_clicked();
+
 
 private:
     Ui::MaClasse *ui;
@@ -63,7 +66,7 @@ private:
       static int C;
     static int test;
       static int test2;
-
+    static int etat;
 
 
 

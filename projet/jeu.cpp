@@ -32,14 +32,14 @@ Carte *MaClasse::center=nullptr;
 
 void MaClasse::on_PlayButton_clicked()
 {
-    ui->mywidget->close();
+    ui->PlayButton->hide();
 
      MaDeck=this->creer_deck();
 
 
     MaDeck->initImage(":/cartes/photos_des_cartes/images.png");
     ui->deckLayout->addWidget(MaDeck->getqlabel());
-    this->setStyleSheet("background-image: url(:/EEE/fond.jpg);");
+
 
     ui->deckLayout->parentWidget()->setStyleSheet("background-image: url(:/dekp/dek.jpg);");
 
@@ -228,7 +228,7 @@ void MaClasse::ajouterComputer(Carte *A)
 {
      ui->IALayout->setAlignment(Qt::AlignCenter) ;
      ui->IALayout-> addWidget(A,0,Qt::AlignCenter);
-
+     A->changerimage(":/cartes/photos_des_cartes/images.png");
      count--;
       qDebug()<<"valeur de j"<<J;
      C++;
@@ -425,11 +425,10 @@ bool MaClasse::jouer(Carte *A){
 
              Double(A);
              qDebug()<<"valeur de j"<<J;
-
+              qDebug()<<"hy 3";
              return true;}
 
          else if(test==1){
-
 
              if(A->getNumber()==2){
                 Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
@@ -529,9 +528,12 @@ bool MaClasse::jouer(Carte *A){
 
                     return true;
                 }
+
             }
+
         }
     } while (cond);
+
 
     ajouterComputer(MaDeck->getCarte());
     QString textLabel = QString::number(count);
@@ -544,50 +546,24 @@ bool MaClasse::jouer(Carte *A){
     void MaClasse::Double(Carte *A)
     {
 if(A->getNumber()==2){
-        bool v=false;
-        for (int var = 0; var < ui->IALayout->count(); ++var) {
-            QWidget *widget = ui->IALayout->itemAt(var)->widget();
-            // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
-            Carte *carteWidget = qobject_cast<Carte*>(widget);
-            if(carteWidget->getNumber()==2){
-                QEventLoop loope;
-                QTimer::singleShot(400, &loope, &QEventLoop::quit);
-                loope.exec();
-                v=jouerC(carteWidget);
-                break;
-            }
-
-        }
+        bool v=haveComputerCarte();
         if(v==false){
             ajouterDeuxCarte();
-
         }
         else {
-            bool v2=false;
-            for (int var = 0; var < ui->joeurLayout->count(); ++var) {
-                QWidget *widget = ui->joeurLayout->itemAt(var)->widget();
-                // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
-                Carte *carteWidget = qobject_cast<Carte*>(widget);
-                if(carteWidget->getNumber()==2){
-                    test=1;
-                    v2=true;
-                }}
+            bool v2=haveCarte();
+
+
             if(v2==false){
+
               ajouterMoiDeuxCarte();
                 ajouterMoiDeuxCarte();
             }
             else if(v2==true){
-                bool v3=false;
-                for (int var = 0; var < ui->IALayout->count(); ++var) {
-                    QWidget *widget = ui->IALayout->itemAt(var)->widget();
-                    // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
-                    Carte *carteWidget = qobject_cast<Carte*>(widget);
-                    if(carteWidget->getNumber()==2){
-                        v3=true;
-                        test2=1;
-
-
-                    }
+                test=1;
+                bool v3=haveComputerCarte();
+                if (v3==true){
+                    test2=1;
                 }
 
             }
@@ -621,5 +597,43 @@ loop3.exec();
 ajouterMainJoueur(MaDeck->getCarte());
 
     }
+
+
+bool MaClasse::haveComputerCarte()
+{
+for (int var = 0; var < ui->IALayout->count(); ++var) {
+        QWidget *widget = ui->IALayout->itemAt(var)->widget();
+        // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+        Carte *carteWidget = qobject_cast<Carte*>(widget);
+        if(carteWidget->getNumber()==2){
+            QEventLoop loope;
+            QTimer::singleShot(400, &loope, &QEventLoop::quit);
+            loope.exec();
+            jouerC(carteWidget);
+            return true;
+        }
+
+}
+return false ; }
+
+bool MaClasse::haveCarte()
+{
+for (int var = 0; var < ui->joeurLayout->count(); ++var) {
+        qDebug()<<"hy";
+        QWidget *widget = ui->joeurLayout->itemAt(var)->widget();
+
+        qDebug()<<"hy 2";
+        // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+        Carte *carteWidget = qobject_cast<Carte*>(widget);
+
+
+
+        if(carteWidget->getNumber()==2){
+
+             return true;
+
+
+        }}
+}
 
 

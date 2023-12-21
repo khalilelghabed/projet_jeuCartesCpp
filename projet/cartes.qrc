@@ -44,6 +44,7 @@
         <file>photos_des_cartes/interface.jpg</file>
         <file>photos_des_cartes/BOTON.jpg</file>
         <file>photos_des_cartes/table2.jpg</file>
+        <file>photos_des_cartes/table8.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>photos_des_cartes/play.jpg</file>
