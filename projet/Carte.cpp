@@ -186,3 +186,12 @@ QString Carte::getSymbol()
 {
     return symbol;
 }
+
+void Carte::setCanPlay(bool valeur)
+{
+    canPlay=valeur;
+}
+bool Carte::getCanplay()
+{
+    return canPlay;
+}

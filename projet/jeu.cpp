@@ -9,10 +9,11 @@ MaClasse::MaClasse(QWidget *parent)
 {
     ui->setupUi(this);
    ui->deckLayout->parentWidget()->setStyleSheet("background-image: url(:/dekp/dek.jpg);");
-    ui->centralLayout->parentWidget()->setStyleSheet("background-image: url(:/PLAYB/Play.png);");
 
 
 }
+
+
 
 
 MaClasse::~MaClasse()
@@ -23,6 +24,8 @@ MaClasse::~MaClasse()
 int MaClasse::test2=0;
 int MaClasse::test=0;
 int MaClasse::test3=0;
+int MaClasse::test4=0;
+int MaClasse::test5=0;
 int MaClasse::J=0;
 int MaClasse::C=0;
 int MaClasse::count=0;
@@ -64,6 +67,31 @@ void MaClasse::on_PlayButton_clicked()
             }
         });
        });
+
+
+}
+void MaClasse::ajouterCarteAcentral(Carte *A)
+{
+
+    Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
+    B->retournerImage();// Créez un pointeur Carte* B initialisé à nullptr
+
+    QLayoutItem *item;
+
+    while ((item = ui->centralLayout->takeAt(0)) != nullptr) {
+
+        delete item->widget();  // Supprime l'objet associé au widget
+        delete item;  // Supprime l'objet de mise en page
+
+    }
+    secendDeck->ajoutCarte(B);
+    qDebug()<<"ici la solution "<<B->getNumber()<<B->getSymbol();
+
+    // Ajouter le nouveau widget au layout
+    ui->centralLayout->addWidget(A);
+    center=A;
+    center->setCanPlay(false);
+    J--;
 
 
 }
@@ -207,6 +235,7 @@ Group *MaClasse::creer_deck(){
 
 void MaClasse::ajouterMainJoueur(Carte *A)
 {
+     A->setCanPlay(true);
      ui->joeurLayout->setAlignment(Qt::AlignCenter) ;
      ui->joeurLayout->addWidget(A,0,Qt::AlignCenter);
      count--;
@@ -226,10 +255,10 @@ void MaClasse::ajouterMainJoueur(Carte *A)
 
 
 void MaClasse::ajouterComputer(Carte *A)
-{
+{     A->setCanPlay(false);
      ui->IALayout->setAlignment(Qt::AlignCenter) ;
      ui->IALayout-> addWidget(A,0,Qt::AlignCenter);
-    // A->changerimage(":/cartes/photos_des_cartes/images.png");
+     A->changerimage(":/cartes/photos_des_cartes/images.png");
      count--;
       qDebug()<<"valeur de j"<<J;
      C++;
@@ -251,6 +280,7 @@ void MaClasse::ajouterComputer(Carte *A)
 
 void MaClasse::carteCentrale(Carte *A){
      ui->centralLayout->addWidget(A);
+      A->setCanPlay(false);
      center=A;
      count--;
 
@@ -392,30 +422,9 @@ bool MaClasse::jouerC(Carte *A){
 
 bool MaClasse::jouer(Carte *A){
 
-     if(A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol() ){
-
+     if((A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol())&& A->getCanplay()==true ){
          if(test==0 &&test3==0){
-             A->retournerImage();
-
-             Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
-             B->retournerImage();// Créez un pointeur Carte* B initialisé à nullptr
-
-             QLayoutItem *item;
-
-             while ((item = ui->centralLayout->takeAt(0)) != nullptr) {
-
-                 delete item->widget();  // Supprime l'objet associé au widget
-                 delete item;  // Supprime l'objet de mise en page
-
-             }
-             secendDeck->ajoutCarte(B);
-             qDebug()<<"ici la solution "<<B->getNumber()<<B->getSymbol();
-
-             // Ajouter le nouveau widget au layout
-             ui->centralLayout->addWidget(A);
-             center=A;
-             J--;
-
+             ajouterCarteAcentral(A);
              if(A->getNumber()!=1 && A->getNumber()!=2 ){
                  QTimer::singleShot(400, [=]() {
 
@@ -425,52 +434,45 @@ bool MaClasse::jouer(Carte *A){
              }
 
              Double(A);
-             qDebug()<<"valeur de j"<<J;
-              qDebug()<<"hy 3";
+
              return true;}
          else if(test3==1){
 
              if(A->getNumber()==2){
-                 Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
-                 B->retournerImage();
-                 secendDeck->ajoutCarte(B);
-                 QLayoutItem *item;
-                 while ((item = ui->centralLayout->takeAt(0)) != nullptr) {
-                     delete item->widget();  // Supprime l'objet associé au widget
-                     delete item;  // Supprime l'objet de mise en page
+                ajouterCarteAcentral(A);
 
-                 }
-
-
-                 // Ajouter le nouveau widget au layout
-                 ui->centralLayout->addWidget(A);
-                 center=A;
-                 J--;
-
-                 if(test2==0){
+                 if (test4==0){
                      ajouterDeuxCarte();
                      ajouterDeuxCarte();
                  }
-             }}
+                 else if (test4==1){
+
+                     for (int var = 0; var < ui->IALayout->count(); ++var) {
+                         QWidget *widget = ui->IALayout->itemAt(var)->widget();
+                         // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+                         Carte *carteWidget = qobject_cast<Carte*>(widget);
+                         if(carteWidget->getNumber()==2){
+                             QEventLoop loope;
+                             QTimer::singleShot(400, &loope, &QEventLoop::quit);
+                             loope.exec();
+                             jouerC(carteWidget);
+
+
+                         }}
+                     if(test5==0){
+                     ajouterMoiDeuxCarte();ajouterMoiDeuxCarte();ajouterMoiDeuxCarte();
+                     }
+                     test4=0;
+                 }
+
+             }
+             test3=0;
+         }
 
          else if(test==1){
 
              if(A->getNumber()==2){
-                Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
-                 B->retournerImage();
-                 secendDeck->ajoutCarte(B);
-                 QLayoutItem *item;
-                 while ((item = ui->centralLayout->takeAt(0)) != nullptr) {
-                     delete item->widget();  // Supprime l'objet associé au widget
-                     delete item;  // Supprime l'objet de mise en page
-
-                 }
-
-
-                 // Ajouter le nouveau widget au layout
-                 ui->centralLayout->addWidget(A);
-                 center=A;
-                 J--;
+               ajouterCarteAcentral(A);
 
                  if(test2==0){
                ajouterDeuxCarte();
@@ -496,6 +498,7 @@ bool MaClasse::jouer(Carte *A){
 
                          }
                      }
+                     test2=0;
                  }
 
 
@@ -506,6 +509,7 @@ bool MaClasse::jouer(Carte *A){
              test=0;
              return true;
          }
+             test=0;
          }
 
      }
@@ -649,6 +653,7 @@ for (int var = 0; var < ui->IALayout->count(); ++var) {
 }
 return false ; }
 
+
 bool MaClasse::haveCarte()
 {
 for (int var = 0; var < ui->joeurLayout->count(); ++var) {
@@ -679,20 +684,25 @@ if(a==false){
         computerJouer();
 
         }
-/*
-else if (a==true){
-        bool b=haveComputerCarte();
-        if(b==false){
-             test3=1;
-        }
-        else if (b==true){
-             bool c=haveCarte();
-             if(c==false){
-                ajouterMoiDeuxCarte();
-                ajouterMoiDeuxCarte();
-                ajouterMoiDeuxCarte();
-             }
-        }
-}*/
-}
+else if(a==true){
+        test3=1;
+        bool b=false;
+        for (int var = 0; var < ui->IALayout->count(); ++var) {
+             QWidget *widget = ui->IALayout->itemAt(var)->widget();
+             // Utilisez qobject_cast pour convertir le widget en une instance de la classe Carte
+             Carte *carteWidget = qobject_cast<Carte*>(widget);
+             if(carteWidget->getNumber()==2){
+                b=true;
 
+
+             }}
+        if(b==false){
+             test4=0;
+             test5=0;
+        }
+        else{
+             test4=1;
+
+
+}
+        }}

@@ -1,4 +1,4 @@
-#ifndef MACLASSE_H
+ #ifndef MACLASSE_H
 #define MACLASSE_H
 #include "Group.h"
 #include <QMainWindow>
@@ -12,7 +12,7 @@
 #include<QVBoxLayout>
 #include<QWidget>
 #include"VictoryMessage.h"
-
+#include <QResizeEvent>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MaClasse; }
 QT_END_NAMESPACE
@@ -24,6 +24,7 @@ class MaClasse : public QMainWindow
 public:
     MaClasse(QWidget *parent = nullptr);
     ~MaClasse();
+
     void ajouterMainJoueur(Carte* A);
     Carte *creer_carte(int number, const QString& symbol, const QPixmap& imagePath);
     Group *creer_deck();
@@ -40,6 +41,7 @@ public:
     void doubleComputer();
      bool  haveCarte();
     bool haveComputerCarte();
+     void ajouterCarteAcentral(Carte *A);
 
 
 public slots:
@@ -49,9 +51,6 @@ private slots:
 
 
     void on_PlayButton_clicked();
-
-
-
 
 private:
     Ui::MaClasse *ui;
@@ -68,6 +67,8 @@ private:
      static int test2;  //test si on a à la deuxime etape de double pour joueur
     static int test3; // meme chose mais pour le double qui commence par lordinateur
      static int test4;
+     static int test5;
+     static int test6;
 };
 
 

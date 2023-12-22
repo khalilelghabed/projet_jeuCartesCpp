@@ -23,11 +23,13 @@ public:
     void changerimage(const QString &imgPath);
     int getNumber();
     QString getSymbol();
+    void setCanPlay(bool);
+    bool getCanplay();
 
 private:
     int number;
     QString symbol;
-
+    bool canPlay=true;
 
 };
 
