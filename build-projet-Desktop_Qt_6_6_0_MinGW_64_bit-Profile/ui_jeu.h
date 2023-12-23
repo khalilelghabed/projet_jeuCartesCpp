@@ -11,11 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -26,18 +28,18 @@ class Ui_MaClasse
 {
 public:
     QWidget *centralwidget;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *IALayout;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
+    QVBoxLayout *centralLayout;
+    QSpacerItem *horizontalSpacer;
+    QFrame *frame_2;
+    QLabel *labelCount;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *deckLayout;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *joeurLayout;
-    QWidget *horizontalLayoutWidget_2;
-    QHBoxLayout *IALayout;
-    QLabel *labelCount;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *centralLayout;
-    QWidget *mywidget;
     QPushButton *PlayButton;
-    QLabel *title;
+    QHBoxLayout *joeurLayout;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -45,35 +47,45 @@ public:
     {
         if (MaClasse->objectName().isEmpty())
             MaClasse->setObjectName("MaClasse");
-        MaClasse->resize(1210, 888);
-        MaClasse->setStyleSheet(QString::fromUtf8("background-image: url(:/nfond/fond.jpg);\n"
-"color: rgb(255, 255, 255);"));
+        MaClasse->resize(1135, 636);
+        MaClasse->setStyleSheet(QString::fromUtf8(""));
         centralwidget = new QWidget(MaClasse);
         centralwidget->setObjectName("centralwidget");
-        centralwidget->setStyleSheet(QString::fromUtf8("background-image: url(:/cartes/photos_des_cartes/interface.jpg);"));
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(900, 340, 101, 151));
-        deckLayout = new QVBoxLayout(verticalLayoutWidget);
-        deckLayout->setObjectName("deckLayout");
-        deckLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayoutWidget = new QWidget(centralwidget);
-        horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(290, 700, 711, 181));
-        joeurLayout = new QHBoxLayout(horizontalLayoutWidget);
-        joeurLayout->setObjectName("joeurLayout");
-        joeurLayout->setSizeConstraint(QLayout::SetFixedSize);
-        joeurLayout->setContentsMargins(0, 0, 0, 0);
-        horizontalLayoutWidget_2 = new QWidget(centralwidget);
-        horizontalLayoutWidget_2->setObjectName("horizontalLayoutWidget_2");
-        horizontalLayoutWidget_2->setGeometry(QRect(290, 0, 711, 151));
-        IALayout = new QHBoxLayout(horizontalLayoutWidget_2);
+        centralwidget->setStyleSheet(QString::fromUtf8(" background-image: url(:/photos_des_cartes/interface.jpg);\n"
+"        background-repeat: no-repeat; /* Emp\303\252che la r\303\251p\303\251tition */\n"
+"        background-position: center center; /* Centre l'image */\n"
+"        background-attachment: fixed; /* Fixe l'image pendant le d\303\251filement */\n"
+"        background-size: cover; /* Ajuste la taille de l'image pour couvrir compl\303\250tement */"));
+        verticalLayout = new QVBoxLayout(centralwidget);
+        verticalLayout->setObjectName("verticalLayout");
+        IALayout = new QHBoxLayout();
         IALayout->setObjectName("IALayout");
         IALayout->setSizeConstraint(QLayout::SetFixedSize);
-        IALayout->setContentsMargins(0, 0, 0, 0);
-        labelCount = new QLabel(centralwidget);
+
+        verticalLayout->addLayout(IALayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        centralLayout = new QVBoxLayout();
+        centralLayout->setObjectName("centralLayout");
+
+        horizontalLayout_2->addLayout(centralLayout);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        frame_2 = new QFrame(centralwidget);
+        frame_2->setObjectName("frame_2");
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        labelCount = new QLabel(frame_2);
         labelCount->setObjectName("labelCount");
-        labelCount->setGeometry(QRect(920, 510, 71, 41));
+        labelCount->setGeometry(QRect(60, 380, 71, 41));
         QFont font;
         font.setPointSize(24);
         font.setBold(true);
@@ -82,19 +94,15 @@ public:
         labelCount->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "background-image: url(:/cartes/photos_des_cartes/BOTON.jpg);\n"
 ""));
-        verticalLayoutWidget_2 = new QWidget(centralwidget);
-        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(460, 340, 101, 151));
-        centralLayout = new QVBoxLayout(verticalLayoutWidget_2);
-        centralLayout->setObjectName("centralLayout");
-        centralLayout->setContentsMargins(0, 0, 0, 0);
-        mywidget = new QWidget(centralwidget);
-        mywidget->setObjectName("mywidget");
-        mywidget->setGeometry(QRect(0, 0, 1262, 912));
-        mywidget->setStyleSheet(QString::fromUtf8("background-image: url(:/cartes/photos_des_cartes/interface.jpg);"));
-        PlayButton = new QPushButton(mywidget);
+        verticalLayoutWidget = new QWidget(frame_2);
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
+        verticalLayoutWidget->setGeometry(QRect(60, 180, 101, 151));
+        deckLayout = new QVBoxLayout(verticalLayoutWidget);
+        deckLayout->setObjectName("deckLayout");
+        deckLayout->setContentsMargins(0, 0, 0, 0);
+        PlayButton = new QPushButton(frame_2);
         PlayButton->setObjectName("PlayButton");
-        PlayButton->setGeometry(QRect(490, 510, 291, 91));
+        PlayButton->setGeometry(QRect(-10, 100, 191, 31));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Segoe UI")});
         font1.setPointSize(24);
@@ -105,19 +113,29 @@ public:
 "background-image: url(:/photos_des_cartes/play.jpg);\n"
 "font: 900 24pt \"Segoe UI\";\n"
 "border:none;"));
-        title = new QLabel(mywidget);
-        title->setObjectName("title");
-        title->setGeometry(QRect(420, 210, 411, 121));
-        title->setStyleSheet(QString::fromUtf8("color: rgb(191, 28, 58);\n"
-"border-color: rgb(255, 255, 255);\n"
-"\n"
-"\n"
-"font: 24pt \"Segoe UI\";\n"
-"background-image: url(:/photos_des_cartes/mytitle.jpg);"));
+
+        horizontalLayout_2->addWidget(frame_2);
+
+        horizontalLayout_2->setStretch(0, 3);
+        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_2->setStretch(2, 2);
+        horizontalLayout_2->setStretch(3, 1);
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        joeurLayout = new QHBoxLayout();
+        joeurLayout->setObjectName("joeurLayout");
+        joeurLayout->setSizeConstraint(QLayout::SetFixedSize);
+
+        verticalLayout->addLayout(joeurLayout);
+
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 1);
+        verticalLayout->setStretch(2, 1);
         MaClasse->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MaClasse);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1210, 22));
+        menubar->setGeometry(QRect(0, 0, 1135, 22));
         MaClasse->setMenuBar(menubar);
         statusbar = new QStatusBar(MaClasse);
         statusbar->setObjectName("statusbar");
@@ -136,7 +154,6 @@ public:
 #if QT_CONFIG(shortcut)
         PlayButton->setShortcut(QString());
 #endif // QT_CONFIG(shortcut)
-        title->setText(QCoreApplication::translate("MaClasse", "<html><head/><body><p align=\"center\"><span style=\" font-weight:700; font-style:italic;\">JEU DE CARTES</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };
