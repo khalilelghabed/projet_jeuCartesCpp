@@ -1,6 +1,6 @@
 #ifndef PREMIERINETRFACE_H
 #define PREMIERINETRFACE_H
-
+#include<choixtable.h>
 #include <QWidget>
 
 namespace Ui {

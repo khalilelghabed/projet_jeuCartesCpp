@@ -32,18 +32,23 @@ Carte *Group::getCarte() {
 
 }
 
+void Group::viderGroup()
+{
+cartes.clear();
+}
+
 
 
 int Group::transformer(Group *autreGroup)
 {
         int num=0;
-         qDebug()<<"les nombres des cartes dans la deck est"<<num;
+
         while(!autreGroup->getCartes().isEmpty()){
          qDebug()<<"les nombres des cartes dans la deck est"<<num;
         this->ajoutCarte(autreGroup->getCarte());
         num++;
         }
-
+        this->melangerCartes();
         return num;
 }
 

@@ -14,9 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-size: 900px;
-border-image: url(:/cartes/photos_des_cartes/bg2.jpg) 0 0 0 0 stretch stretch;</string>
+   <string notr="true">background-size: 900px; 
+border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">

@@ -13,6 +13,7 @@ SOURCES += \
     Group.cpp \
     MonQlabel.cpp \
     VictoryMessage.cpp \
+    choixtable.cpp \
     joueur.cpp \
     maclasse.cpp \
     main.cpp \
@@ -24,12 +25,14 @@ HEADERS += \
     Group.h \
     MonQlabel.h \
     VictoryMessage.h \
+    choixtable.h \
     joueur.h \
     maclasse.h \
     premierInetrface.h \
     principal.h
 
 FORMS += \
+    choixtable.ui \
     maclasse.ui \
     premierInetrface.ui \
     principal.ui

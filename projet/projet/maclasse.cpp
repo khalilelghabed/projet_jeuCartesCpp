@@ -1,18 +1,49 @@
 #include "maclasse.h"
 #include "ui_maclasse.h"
 #include<QDebug>
+#include<QLabel>
 
 MaClasse::MaClasse(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MaClasse)
 {
+
     this->setStyleSheet("QWidget { background-image: url(':/cartes/photos_des_cartes/interface.jpg');"
                         "background-size: cover; }");
 
     ui->setupUi(this);
 
+    ui->LabelPointJ->setText("Joueur: " + QString::number(pointJoueur) + " points");
+
+    ui->LabelPoinC->setText("computer: " + QString::number(pointComputer) + " points");
+    ui->LabelPointJ->setStyleSheet("QLabel {"
+                                   "font-weight: bold;"       // Police en gras
+                                   "text-transform: uppercase;"
+                                   "color: white;"             // Couleur du texte
+                                   "font-size: 32px;"         // Taille de la police
+                                   "border: none;"            // Pas de bordure
+                                   "background-color: #3498db;"// Couleur de fond
+                                   "}"
+                                   "QLabel:hover {"
+                                   "background-color: #2980b9;"// Couleur de fond au survol
+                                   "}");
+    ui->LabelPoinC->setStyleSheet("QLabel {"
+                                  "font-weight: bold;"       // Police en gras
+                                  "text-transform: uppercase;"
+                                   "color: white;"             // Couleur du texte
+                                   "font-size: 32px;"         // Taille de la police
+                                   "border: none;"            // Pas de bordure
+                                   "background-color: #3498db;"// Couleur de fond
+                                   "}"
+                                   "QLabel:hover {"
+                                   "background-color: #2980b9;"// Couleur de fond au survol
+                                   "}");
+
     ui->labelCount->setFixedSize(50,60);
+    ui->joeuLabel->setFixedSize(50,60);
+    ui->computerLabel->setFixedSize(50,60);
     MaDeck=this->creer_deck();
+
 
 
     MaDeck->initImage(":/cartes/photos_des_cartes/images.png");
@@ -74,6 +105,9 @@ void MaClasse::ajouterCarteAcentral(Carte *A)
         delete item;  // Supprime l'objet de mise en page
 
     }
+     J--;
+    QString textLabelJoueur=QString::number(J);
+    ui->joeuLabel->setText(textLabelJoueur);
     secendDeck->ajoutCarte(B);
     qDebug()<<"ici la solution "<<B->getNumber()<<B->getSymbol();
 
@@ -81,11 +115,10 @@ void MaClasse::ajouterCarteAcentral(Carte *A)
     ui->centralLayout->addWidget(A);
     center=A;
     center->setCanPlay(false);
-    J--;
+
 
 
 }
-
 
 
 
@@ -224,9 +257,9 @@ void MaClasse::ajouterMainJoueur(Carte *A)
      ui->joeurLayout->addWidget(A,0,Qt::AlignCenter);
      count--;
      J++;
+     QString textLabelJoueur=QString::number(J);
+     ui->joeuLabel->setText(textLabelJoueur);
      if (count==0){
-         qDebug()<<"ici est le grande problem "<< secendDeck->getCarte()->getNumber();
-         qDebug()<<"les cartes dans la deuxime decke est : ";
          count=MaDeck->transformer(secendDeck);
          QString textLabel=QString::number(count);
          ui->labelCount->setText(textLabel);
@@ -246,6 +279,8 @@ void MaClasse::ajouterComputer(Carte *A)
      count--;
       qDebug()<<"valeur de j"<<J;
      C++;
+      QString textLabelComputer=QString::number(C);
+     ui->computerLabel->setText(textLabelComputer);
       if (count==0){
          qDebug()<<"ici est le grande problem "<< secendDeck->getCarte()->getNumber();
          count=MaDeck->transformer(secendDeck);
@@ -372,7 +407,7 @@ void MaClasse::distribuerComputer(){
      }
 
 bool MaClasse::jouerC(Carte *A){
-
+     if (J!=0){
      if(A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol()){
          Carte* B =this->creer_carte(center->getNumber(),center->getSymbol(),QPixmap(":/cartes/photos_des_cartes/D1.jpg"));
          B->retournerImage();
@@ -388,37 +423,43 @@ bool MaClasse::jouerC(Carte *A){
          // Ajouter le nouveau widget au layout
          ui->centralLayout->addWidget(A);
          center=A;
-
+         C--;
+         QString textLabelComputer=QString::number(C);
+         ui->computerLabel->setText(textLabelComputer);
+          finTour();
          return true;
+
      }
      else{
 
          qDebug()<<"can't play";
-
+        finTour();
          return false;
 
      }
-}
+     }}
 
 
 
 
 
 bool MaClasse::jouer(Carte *A){
-
+     if(C!=0){
      if((A->getNumber()==center->getNumber()||A->getSymbol()==center->getSymbol())&& A->getCanplay()==true ){
          if(test==0 &&test3==0){
              ajouterCarteAcentral(A);
              if(A->getNumber()!=1 && A->getNumber()!=2 ){
                  QTimer::singleShot(400, [=]() {
-
+                     if(J!=0){
                      computerJouer();
-
+                     }
                  });
              }
 
              Double(A);
-
+             if(J==0){
+                 finTour();
+                 return true;}
              return true;}
          else if(test3==1){
 
@@ -451,6 +492,7 @@ bool MaClasse::jouer(Carte *A){
 
              }
              test3=0;
+             finTour();
          }
 
          else if(test==1){
@@ -483,6 +525,7 @@ bool MaClasse::jouer(Carte *A){
                          }
                      }
                      test2=0;
+
                  }
 
 
@@ -491,11 +534,12 @@ bool MaClasse::jouer(Carte *A){
              Double(A);
              qDebug()<<"bien jouer"<<J;
              test=0;
+             finTour();
              return true;
          }
              test=0;
-         }
 
+         }
      }
 
      else{
@@ -509,12 +553,14 @@ bool MaClasse::jouer(Carte *A){
      return false;
      }
 
+}
 
 
 
 
 
     bool MaClasse:: computerJouer()   {
+     if(J!=0){
      bool cond=false;
    do {
           cond=false;
@@ -532,7 +578,6 @@ bool MaClasse::jouer(Carte *A){
 
             }
 
-            qDebug() << "Type réel du widget à la position" << var << ":" << carteWidget->metaObject()->className();
             qDebug() << carteWidget->getNumber();
 
             if (i) {
@@ -561,7 +606,7 @@ bool MaClasse::jouer(Carte *A){
     return false;}
 
 
-
+    }
     void MaClasse::Double(Carte *A)
     {
 if(A->getNumber()==2){
@@ -690,3 +735,349 @@ else if(a==true){
 
 }
         }}
+void MaClasse::finTour()
+{
+        if (J==0){
+viderLyoutJoueur();
+secendDeck->viderGroup();
+MaDeck->viderGroup();
+viderLyoutJoueur();
+secendDeck->viderGroup();
+MaDeck->viderGroup();
+
+QDialog *victoryDialog = new QDialog(this);
+victoryDialog->setWindowTitle("VICTOIRE !");
+victoryDialog->setFixedSize(600, 200);
+// Ajouter un QLabel pour le message
+QLabel *messageLabel = new QLabel("Vous avez gagnez ce tour.", victoryDialog);
+QFont font;
+font.setPointSize(36);
+font.setBold(true);
+messageLabel->setFont(font);
+messageLabel->setStyleSheet("color: white");
+messageLabel->setAlignment(Qt::AlignCenter);
+// Ajouter un bouton pour continuer
+QPushButton *continueButton = new QPushButton("Continuer", victoryDialog);
+continueButton->setStyleSheet("QPushButton {"
+                              "background-color: #3498db;"
+                              "border: none;"
+                              "color: white;"               // Couleur du texte
+                              "font-size: 32px;"            // Taille du texte
+                              "}"
+                              "QPushButton:hover {"
+                              "background-color: #2980b9;"  // Couleur de fond au survol
+                              "}");
+continueButton->setFixedSize(200,50);
+
+QPushButton *mainButton = new QPushButton("quitter", victoryDialog);
+mainButton->setStyleSheet("QPushButton {"
+                          "background-color: #3498db;"
+                          "border: none;"
+                          "color: white;"
+                          "font-size: 32px;"
+                          "}"
+                          "QPushButton:hover {"
+                          "background-color: #2980b9;"
+                          "}");
+mainButton->setFixedSize(200,50);
+QVBoxLayout *layout = new QVBoxLayout(victoryDialog);
+QHBoxLayout *layoutP = new QHBoxLayout();
+
+connect(continueButton, &QPushButton::clicked, this, &MaClasse::commencerJouer);
+connect(continueButton, &QPushButton::clicked, victoryDialog, &QDialog::accept);
+// Disposer les widgets dans un layout vertical
+
+layoutP->addWidget(mainButton);
+layoutP->addWidget(continueButton);
+layout->addWidget(messageLabel);
+layout->addLayout(layoutP);
+pointJoueur++;
+nbr_tour++;
+if(nbr_tour==5){
+             victoryDialog->accept();
+
+             afficherFenetreVictoire();
+
+}
+connect(mainButton, &QPushButton::clicked, this, &MaClasse::retournerPagePrincipale);
+victoryDialog->exec();
+
+
+
+        }
+         else if (C==0){
+
+viderLyoutJoueur();
+secendDeck->viderGroup();
+MaDeck->viderGroup();
+
+QDialog *victoryDialog = new QDialog(this);
+victoryDialog->setWindowTitle("VICTOIRE !");
+victoryDialog->setFixedSize(600, 200);
+
+
+
+
+// Ajouter un QLabel pour le message
+QLabel *messageLabel = new QLabel("Vous avez perdu ce tour.", victoryDialog);
+QFont font;
+font.setPointSize(36);  // Taille du texte
+font.setBold(true);     // Texte en gras
+messageLabel->setFont(font);
+messageLabel->setStyleSheet("color: white");  // Couleur du texte
+messageLabel->setAlignment(Qt::AlignCenter);  // Alignement du texte
+// Ajouter un bouton pour continuer
+QPushButton *continueButton = new QPushButton("Continuer", victoryDialog);
+continueButton->setStyleSheet("QPushButton {"
+                              "background-color: #3498db;"  // Couleur de fond
+                              "border: none;"               // Pas de bordure
+                              "color: white;"               // Couleur du texte
+                              "font-size: 32px;"            // Taille du texte
+                              "}"
+                              "QPushButton:hover {"
+                              "background-color: #2980b9;"  // Couleur de fond au survol
+                              "}");
+continueButton->setFixedSize(200,50);
+
+QVBoxLayout *layout = new QVBoxLayout(victoryDialog);
+QHBoxLayout *layoutP=new QHBoxLayout();
+QPushButton *mainButton = new QPushButton("quitter", victoryDialog);
+mainButton->setStyleSheet("QPushButton {"
+                          "background-color: #3498db;"
+                          "border: none;"
+                          "color: white;"
+                          "font-size: 32px;"
+                          "}"
+                          "QPushButton:hover {"
+                          "background-color: #2980b9;"
+                          "}");
+mainButton->setFixedSize(200,50);
+layoutP->addWidget(mainButton);
+layoutP->addWidget(continueButton);
+
+connect(continueButton, &QPushButton::clicked, this, &MaClasse::commencerJouer);
+connect(continueButton, &QPushButton::clicked, victoryDialog, &QDialog::accept);
+// Disposer les widgets dans un layout vertical
+connect(mainButton, &QPushButton::clicked, this, &MaClasse::retournerPagePrincipale);
+layout->addWidget(messageLabel);
+layout->addLayout(layoutP);
+pointComputer++;
+nbr_tour++;
+if(nbr_tour==5){
+             victoryDialog->accept();
+
+afficherFenetreVictoire();
+            }
+// Afficher la fenêtre de dialogue de victoire
+victoryDialog->exec();
+        }
+
+}
+
+void MaClasse::viderLyoutJoueur()
+{
+        viderLayout(ui->joeurLayout);
+        viderLayout(ui->IALayout);
+        viderLayout(ui->centralLayout);
+
+
+
+}
+
+void MaClasse::viderLayout(QLayout *layout)
+{
+        QLayoutItem *item;
+        while ((item = layout->takeAt(0)) != nullptr) {
+QWidget *widget = item->widget();
+if (widget) {
+             delete widget;  // Supprime le widget associé
+} else {
+             viderLayout(item->layout());  // Récursivement vider les sous-layouts
+}
+delete item;  // Supprime l'objet de mise en page
+        }
+}
+
+
+
+
+
+
+void MaClasse::commencerJouer()
+{
+        ui->LabelPointJ->setText("Joueur: " + QString::number(pointJoueur) + " points");
+
+        ui->LabelPoinC->setText("computer: " + QString::number(pointComputer) + " points");
+        test=0;
+        test2=0;
+        test3=0;
+        test4=0;
+        test5=0;
+        J=0;
+        C=0;
+
+        MaDeck=this->creer_deck();
+        qDebug()<<"il entre";
+
+
+        distribuerJoeur();
+        distribuerComputer();
+        carteCentrale(MaDeck->getCarte());
+
+}
+
+
+void MaClasse::afficherFenetreVictoire() {
+        // Créer la fenêtre de victoire
+        QDialog *victoryDialog = new QDialog(this);
+        victoryDialog->setWindowTitle("VICTOIRE !");
+        victoryDialog->setFixedSize(700, 400);
+
+        // Label 1: Fin de match !
+
+QLabel *label1 = new QLabel("Fin de match ! \n Joueur : " + QString::number(pointJoueur) + " points \n computer : " + QString::number(pointComputer) + " points \n Vous avez gagné !", victoryDialog);
+
+ QLabel *label2 = new QLabel("Fin de match ! \n Joueur : " + QString::number(pointJoueur) + " points \n computer : " + QString::number(pointComputer) + " points \n Vous avez perdu!", victoryDialog);
+
+        QFont font1;
+        font1.setPointSize(24);
+        font1.setBold(true);
+        label1->setFont(font1);
+        label1->setStyleSheet("color: white");
+        label1->setAlignment(Qt::AlignCenter);
+
+        label2->setFont(font1);
+        label2->setStyleSheet("color: white");
+        label2->setAlignment(Qt::AlignCenter);
+
+
+
+        // Bouton 1: Page principale
+        QPushButton *mainButton = new QPushButton("Page principale", victoryDialog);
+        mainButton->setStyleSheet("QPushButton {"
+                                  "background-color: #3498db;"
+                                  "border: none;"
+                                  "color: white;"
+                                  "font-size: 32px;"
+                                  "}"
+                                  "QPushButton:hover {"
+                                  "background-color: #2980b9;"
+                                  "}");
+        mainButton->setFixedSize(300,60);
+
+        // Bouton 2: Replay
+        QPushButton *replayButton = new QPushButton("Rejouer", victoryDialog);
+        replayButton->setStyleSheet("QPushButton {"
+                                    "background-color: #3498db;"
+                                    "border: none;"
+                                    "color: white;"
+                                    "font-size: 32px;"
+                                    "}"
+                                    "QPushButton:hover {"
+                                    "background-color: #2980b9;"
+                                    "}");
+        replayButton->setFixedSize(300,60);
+
+        // Créer une mise en grille pour organiser les widgets
+        QVBoxLayout *layout = new QVBoxLayout(victoryDialog);
+        QHBoxLayout *layoutButton=new QHBoxLayout();
+
+        layoutButton->addWidget(mainButton);
+        layoutButton->addWidget(replayButton);
+        if(pointJoueur>pointComputer)
+        layout->addWidget(label1);
+        else{
+        layout->addWidget(label2);}
+        layout->addLayout(layoutButton);
+
+        connect(mainButton, &QPushButton::clicked, this, &MaClasse::retournerPagePrincipale);
+
+        connect(replayButton, &QPushButton::clicked, this, &MaClasse::replay);
+        connect(replayButton, &QPushButton::clicked, victoryDialog, &QDialog::accept);
+
+        // Afficher la fenêtre
+        victoryDialog->exec();
+}
+
+
+
+void MaClasse::retournerPagePrincipale()
+{
+        this->close();
+       premierInetrface *principale =new premierInetrface();
+        QMainWindow *mainWindow = qobject_cast<QMainWindow*>(this->parentWidget());
+        mainWindow->setCentralWidget(principale);
+        mainWindow->setStyleSheet("background-size: 900px; border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;");
+
+}
+
+void MaClasse::replay()
+{
+        nbr_tour=0;
+        pointComputer=0;
+        pointJoueur=0;
+commencerJouer();
+}
+
+
+void MaClasse::on_QUITTER_clicked()
+{
+confirmSortir();
+
+}
+void MaClasse::confirmSortir()
+{
+// Créer une boîte de dialogue
+QDialog *quitDialog = new QDialog(this);
+quitDialog->setWindowTitle("Confirmation");
+
+// Ajouter un QLabel pour le message
+QLabel *messageLabel = new QLabel("Voulez-vous vraiment quitter ?", quitDialog);
+QFont font;
+font.setPointSize(16);
+font.setBold(true);
+messageLabel->setFont(font);
+messageLabel->setStyleSheet("color: white");
+messageLabel->setAlignment(Qt::AlignCenter);
+
+// Ajouter un bouton "Quitter"
+QPushButton *quitButton = new QPushButton("Quitter", quitDialog);
+quitButton->setStyleSheet("QPushButton {"
+                          "background-color: #e74c3c;"
+                          "border: none;"
+                          "color: white;"               // Couleur du texte
+                          "font-size: 16px;"            // Taille du texte
+                          "}"
+                          "QPushButton:hover {"
+                          "background-color: #c0392b;"  // Couleur de fond au survol
+                          "}");
+
+// Ajouter un bouton "Annuler"
+QPushButton *cancelButton = new QPushButton("Annuler", quitDialog);
+cancelButton->setStyleSheet("QPushButton {"
+                            "background-color: #3498db;"
+                            "border: none;"
+                            "color: white;"               // Couleur du texte
+                            "font-size: 16px;"            // Taille du texte
+                            "}"
+                            "QPushButton:hover {"
+                            "background-color: #2980b9;"  // Couleur de fond au survol
+                            "}");
+
+// Créer une mise en page horizontale pour les boutons
+QHBoxLayout *buttonLayout = new QHBoxLayout;
+buttonLayout->addWidget(quitButton);
+buttonLayout->addWidget(cancelButton);
+
+// Créer une mise en page verticale pour la boîte de dialogue
+QVBoxLayout *mainLayout = new QVBoxLayout(quitDialog);
+mainLayout->addWidget(messageLabel);
+mainLayout->addLayout(buttonLayout);
+
+// Connecter les signaux et les slots pour les boutons
+connect(quitButton, &QPushButton::clicked, this, &MaClasse::retournerPagePrincipale);
+connect(cancelButton, &QPushButton::clicked, quitDialog, &QDialog::reject);
+
+// Afficher la boîte de dialogue
+quitDialog->exec();
+}

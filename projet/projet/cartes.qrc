@@ -51,10 +51,13 @@
         <file>photos_des_cartes/table1.jpg</file>
         <file>photos_des_cartes/bg.jpg</file>
         <file>photos_des_cartes/bg2.jpg</file>
+        <file>photos_des_cartes/bg3.jpg</file>
+        <file>photos_des_cartes/fond.jpg</file>
     </qresource>
     <qresource prefix="/">
         <file>photos_des_cartes/play.jpg</file>
         <file>photos_des_cartes/interface.jpg</file>
         <file>photos_des_cartes/mytitle.jpg</file>
+        <file>photos_des_cartes/button.jpg</file>
     </qresource>
 </RCC>

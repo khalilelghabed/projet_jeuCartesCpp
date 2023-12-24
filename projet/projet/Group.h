@@ -15,7 +15,7 @@ public:
     void retirerCarte(const Carte *carte);  // Passer la carte par référence constante
     void melangerCartes();
     Carte *getCarte() ;
-
+    void viderGroup();
     int transformer(Group *autreGroup);
 
 

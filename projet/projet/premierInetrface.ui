@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1078</width>
-    <height>761</height>
+    <width>796</width>
+    <height>557</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -102,6 +102,13 @@
              <width>20</width>
              <height>202</height>
             </size>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic;&quot;&gt;play&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/photos_des_cartes/button.jpg);
+</string>
            </property>
            <property name="text">
             <string/>
