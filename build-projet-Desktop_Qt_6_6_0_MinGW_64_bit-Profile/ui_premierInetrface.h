@@ -46,7 +46,7 @@ public:
     {
         if (premierInetrface->objectName().isEmpty())
             premierInetrface->setObjectName("premierInetrface");
-        premierInetrface->resize(1078, 761);
+        premierInetrface->resize(796, 557);
         premierInetrface->setStyleSheet(QString::fromUtf8(""));
         horizontalLayout_2 = new QHBoxLayout(premierInetrface);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -84,6 +84,8 @@ public:
         playButton = new QPushButton(premierInetrface);
         playButton->setObjectName("playButton");
         playButton->setBaseSize(QSize(20, 202));
+        playButton->setStyleSheet(QString::fromUtf8("background-image: url(:/photos_des_cartes/button.jpg);\n"
+""));
 
         verticalLayout_2->addWidget(playButton);
 
@@ -152,6 +154,9 @@ public:
     {
         premierInetrface->setWindowTitle(QCoreApplication::translate("premierInetrface", "Form", nullptr));
         label->setText(QCoreApplication::translate("premierInetrface", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700; font-style:italic;\">HEZ 2</span></p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        playButton->setToolTip(QCoreApplication::translate("premierInetrface", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:700; font-style:italic;\">play</span></p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
         playButton->setText(QString());
         deficultyButtn->setText(QCoreApplication::translate("premierInetrface", "PushButton", nullptr));
         quitButton->setText(QString());

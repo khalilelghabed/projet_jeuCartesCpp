@@ -30,9 +30,8 @@ public:
         if (principal->objectName().isEmpty())
             principal->setObjectName("principal");
         principal->resize(1104, 784);
-        principal->setStyleSheet(QString::fromUtf8("\n"
-"background-size: 900px;\n"
-"border-image: url(:/cartes/photos_des_cartes/bg2.jpg) 0 0 0 0 stretch stretch;"));
+        principal->setStyleSheet(QString::fromUtf8("background-size: 900px; \n"
+"border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;"));
         centralwidget = new QWidget(principal);
         centralwidget->setObjectName("centralwidget");
         principal->setCentralWidget(centralwidget);
