@@ -12,7 +12,6 @@ SOURCES += \
     Carte.cpp \
     Group.cpp \
     MonQlabel.cpp \
-    VictoryMessage.cpp \
     choixtable.cpp \
     joueur.cpp \
     maclasse.cpp \
@@ -24,7 +23,6 @@ HEADERS += \
     Carte.h \
     Group.h \
     MonQlabel.h \
-    VictoryMessage.h \
     choixtable.h \
     joueur.h \
     maclasse.h \
