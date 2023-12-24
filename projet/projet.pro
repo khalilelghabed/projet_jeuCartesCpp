@@ -13,20 +13,29 @@ SOURCES += \
     Group.cpp \
     MonQlabel.cpp \
     VictoryMessage.cpp \
+    choixtable.cpp \
     joueur.cpp \
+    maclasse.cpp \
     main.cpp \
-    jeu.cpp
+    premierInetrface.cpp \
+    principal.cpp
 
 HEADERS += \
     Carte.h \
     Group.h \
     MonQlabel.h \
     VictoryMessage.h \
-    jeu.h \
-    joueur.h
+    choixtable.h \
+    joueur.h \
+    maclasse.h \
+    premierInetrface.h \
+    principal.h
 
 FORMS += \
-    jeu.ui
+    choixtable.ui \
+    maclasse.ui \
+    premierInetrface.ui \
+    principal.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

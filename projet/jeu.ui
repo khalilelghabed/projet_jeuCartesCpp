@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1117</width>
-    <height>826</height>
+    <width>1135</width>
+    <height>636</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
         background-attachment: fixed; /* Fixe l'image pendant le défilement */
         background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement */</string>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,3,1">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
     <item>
      <layout class="QHBoxLayout" name="IALayout">
       <property name="sizeConstraint">
@@ -33,7 +33,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1,2,1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1,2,1">
       <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
@@ -64,7 +64,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="frame_2">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -155,7 +155,7 @@ border:none;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1117</width>
+     <width>1135</width>
      <height>22</height>
     </rect>
    </property>

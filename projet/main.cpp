@@ -1,13 +1,16 @@
 #include "jeu.h"
 #include "Carte.h"
 #include <QApplication>
-
+#include "premierinterface.h"
+#include <QScreen>
+#include "principal.h"
+#include "maclasse.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MaClasse w;
+   principal w;
 
-    w.show();
+      w.show();
 
     return a.exec();
 }
