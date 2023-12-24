@@ -35,7 +35,7 @@ void choixTable::on_table1_clicked()
 {
     this->close();
     MaClasse *gamePlay=new MaClasse();
-    QMainWindow *mainWindow = qobject_cast<QMainWindow*>(this->parentWidget());
+    QMainWindow     *mainWindow = qobject_cast<QMainWindow*>(this->parentWidget());
     mainWindow->setCentralWidget(gamePlay);
     mainWindow->setStyleSheet("background-size: 900px; border-image: url(:/cartes/photos_des_cartes/bg.jpg) 0 0 0 0 stretch stretch;");
 }

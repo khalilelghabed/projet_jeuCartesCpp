@@ -1,6 +1,7 @@
 #include "principal.h"
 #include "ui_principal.h"
 #include "maclasse.h"
+#include<QDebug>
 principal::principal(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::principal)
@@ -13,4 +14,15 @@ principal::principal(QWidget *parent) :
 principal::~principal()
 {
     delete ui;
+}
+
+void principal::setDifficulty(int valeur)
+{
+    qDebug()<<"le veleur de difficulty "<<valeur;
+    valeurDifficulty=valeur;
+}
+
+int principal::getDifficulty()
+{
+    return valeurDifficulty;
 }

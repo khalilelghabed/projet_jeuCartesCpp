@@ -3,6 +3,7 @@
 #include<QMainWindow>
 #include <QWidget>
 #include<maclasse.h>
+#include "principal.h"
 
 namespace Ui {
 class choixTable;

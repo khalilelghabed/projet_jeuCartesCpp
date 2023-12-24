@@ -13,7 +13,6 @@ SOURCES += \
     Group.cpp \
     MonQlabel.cpp \
     choixtable.cpp \
-    joueur.cpp \
     maclasse.cpp \
     main.cpp \
     premierInetrface.cpp \
@@ -24,7 +23,6 @@ HEADERS += \
     Group.h \
     MonQlabel.h \
     choixtable.h \
-    joueur.h \
     maclasse.h \
     premierInetrface.h \
     principal.h

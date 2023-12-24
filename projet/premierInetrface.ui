@@ -31,7 +31,7 @@
     </spacer>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="2,2,6,20">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="6,3,6,20">
      <item>
       <spacer name="verticalSpacer_2">
        <property name="orientation">
@@ -47,8 +47,17 @@
      </item>
      <item>
       <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700; font-style:italic;&quot;&gt;HEZ 2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="cartes.qrc">:/cartes/photos_des_cartes/TITLEPRINCIPALE.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -81,9 +90,9 @@
         </spacer>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,0,1,0,1,1">
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,1,0,1,0,1,1">
          <item>
-          <spacer name="verticalSpacer_4">
+          <spacer name="verticalSpacer_7">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>
@@ -107,8 +116,7 @@
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700; font-style:italic;&quot;&gt;play&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-image: url(:/photos_des_cartes/button.jpg);
-</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string/>
@@ -134,7 +142,7 @@
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>PushButton</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -208,6 +216,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="cartes.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -11,7 +11,7 @@
 #include<QApplication>
 #include<QVBoxLayout>
 #include<QWidget>
-#include"VictoryMessage.h"
+#include "principal.h"
 #include <QResizeEvent>
 #include <QWidget>
 #include<QDialog>
@@ -69,6 +69,7 @@ private:
     Carte *macarte;
     QListWidget *cartesList;
     Group *MaDeck;
+
     int nbr_tour=0;
     Group *secendDeck=new Group();
     int pointJoueur=0;

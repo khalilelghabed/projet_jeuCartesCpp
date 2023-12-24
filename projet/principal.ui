@@ -6,16 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1104</width>
-    <height>784</height>
+    <width>1086</width>
+    <height>836</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-size: 900px; 
-border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;</string>
+   <string notr="true">
+background-size: 900px;
+ border-image: url(:/cartes/photos_des_cartes/bg4.jpg) 0 0 0 0 stretch stretch;</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -23,7 +24,7 @@ border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;<
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1104</width>
+     <width>1086</width>
      <height>22</height>
     </rect>
    </property>

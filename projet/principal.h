@@ -15,9 +15,12 @@ class principal : public QMainWindow
 public:
     explicit principal(QWidget *parent = nullptr);
     ~principal();
+    void setDifficulty(int valeur);
+    int getDifficulty();
 
 private:
     Ui::principal *ui;
+    int valeurDifficulty;
 };
 
 #endif // PRINCIPAL_H

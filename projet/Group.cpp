@@ -52,6 +52,37 @@ int Group::transformer(Group *autreGroup)
         return num;
 }
 
+void Group::melangerCartesAvecPourcentage()
+{
+        QVector<Carte*> cartesSpeciales;
+        for (int i = 5; i <= 9; ++i) {
+        cartesSpeciales.append(cartes[i]);
+        }
+
+        // Mélangez les cartes spéciales
+        std::random_shuffle(cartesSpeciales.begin(), cartesSpeciales.end());
+
+        // Calculez le nombre de cartes à inclure en fonction des pourcentages
+        int nombreCartes1 = qCeil(cartesSpeciales.size() * 0.75);
+        int nombreCartes2 = cartesSpeciales.size() - nombreCartes1;
+
+        // Réinitialisez la liste des cartes aux indices 5 à 9
+        for (int i = 5; i <= 9; ++i) {
+        cartes[i] = nullptr;
+        }
+
+        // Ajoutez les cartes sélectionnées avec les pourcentages requis
+        for (int i = 0; i < nombreCartes1; ++i) {
+        cartes[5 + i] = new Carte(1); // Créez une nouvelle carte de numéro 1
+        }
+        for (int i = 0; i < nombreCartes2; ++i) {
+        cartes[5 + nombreCartes1 + i] = new Carte(2); // Créez une nouvelle carte de numéro 2
+        }
+
+        // Mélangez la liste complète des cartes
+        std::random_shuffle(cartes.begin(), cartes.end());
+}
+
 MonQlabel *Group::getqlabel(){
         return labeldeck;
 

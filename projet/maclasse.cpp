@@ -44,6 +44,11 @@ MaClasse::MaClasse(QWidget *parent) :
     ui->computerLabel->setFixedSize(50,60);
     MaDeck=this->creer_deck();
 
+    QIcon icon(":/cartes/photos_des_cartes/pause.png");
+    ui->QUITTER->setIcon(icon);
+    ui->QUITTER->setIconSize(ui->QUITTER->size());
+
+
 
 
     MaDeck->initImage(":/cartes/photos_des_cartes/images.png");

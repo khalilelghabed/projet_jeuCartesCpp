@@ -42,22 +42,22 @@
         <file>photos_des_cartes/Z11.jpg</file>
         <file>photos_des_cartes/Z12.jpg</file>
         <file>photos_des_cartes/interface.jpg</file>
-        <file>photos_des_cartes/BOTON.jpg</file>
-        <file>photos_des_cartes/table2.jpg</file>
-        <file>photos_des_cartes/table8.jpg</file>
-        <file>photos_des_cartes/playy.png</file>
-        <file>photos_des_cartes/PLAYBUT.png</file>
-        <file>photos_des_cartes/fond2.jpg</file>
-        <file>photos_des_cartes/table1.jpg</file>
         <file>photos_des_cartes/bg.jpg</file>
         <file>photos_des_cartes/bg2.jpg</file>
         <file>photos_des_cartes/bg3.jpg</file>
-        <file>photos_des_cartes/fond.jpg</file>
+        <file>photos_des_cartes/bg4.jpg</file>
+        <file>photos_des_cartes/butt1.png</file>
+        <file>photos_des_cartes/butt2 .png</file>
+        <file>photos_des_cartes/butt3.png</file>
+        <file>photos_des_cartes/TITLEPRINCIPALE.png</file>
+        <file>photos_des_cartes/choisir.png</file>
+        <file>photos_des_cartes/choisirTable.png</file>
+        <file>photos_des_cartes/facile.png</file>
+        <file>photos_des_cartes/difficile.png</file>
+        <file>photos_des_cartes/message.png</file>
+        <file>photos_des_cartes/pause.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>photos_des_cartes/play.jpg</file>
         <file>photos_des_cartes/interface.jpg</file>
-        <file>photos_des_cartes/mytitle.jpg</file>
-        <file>photos_des_cartes/button.jpg</file>
     </qresource>
 </RCC>
