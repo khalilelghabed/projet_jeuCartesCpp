@@ -60,6 +60,8 @@ public:
         label = new QLabel(choixTable);
         label->setObjectName("label");
         label->setAcceptDrops(false);
+        label->setPixmap(QPixmap(QString::fromUtf8(":/cartes/photos_des_cartes/choisirTable.png")));
+        label->setScaledContents(true);
 
         horizontalLayout_2->addWidget(label);
 
@@ -145,7 +147,7 @@ public:
 #if QT_CONFIG(whatsthis)
         label->setWhatsThis(QCoreApplication::translate("choixTable", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; font-style:italic;\">choisir une table</span></p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        label->setText(QCoreApplication::translate("choixTable", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; font-style:italic; color:#161891;\">choisir une table</span><br/></p></body></html>", nullptr));
+        label->setText(QString());
         table1->setText(QString());
         table2->setText(QString());
         table3->setText(QString());

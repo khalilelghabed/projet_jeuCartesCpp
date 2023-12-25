@@ -1,9 +1,7 @@
 debug/Carte.o
 debug/Group.o
 debug/MonQlabel.o
-debug/VictoryMessage.o
 debug/choixtable.o
-debug/joueur.o
 debug/maclasse.o
 debug/main.o
 debug/premierInetrface.o
@@ -13,7 +11,6 @@ debug/qrc_cartes.o
 debug/qrc_dek.o
 debug/moc_Carte.o
 debug/moc_MonQlabel.o
-debug/moc_VictoryMessage.o
 debug/moc_choixtable.o
 debug/moc_maclasse.o
 debug/moc_premierInetrface.o

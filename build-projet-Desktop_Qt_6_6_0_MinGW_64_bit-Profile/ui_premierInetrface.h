@@ -32,7 +32,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_3;
     QVBoxLayout *verticalLayout_2;
-    QSpacerItem *verticalSpacer_4;
+    QSpacerItem *verticalSpacer_7;
     QPushButton *playButton;
     QSpacerItem *verticalSpacer_5;
     QPushButton *deficultyButtn;
@@ -62,6 +62,9 @@ public:
 
         label = new QLabel(premierInetrface);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8(""));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/cartes/photos_des_cartes/TITLEPRINCIPALE.png")));
+        label->setScaledContents(true);
 
         verticalLayout->addWidget(label);
 
@@ -77,15 +80,14 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_2->addItem(verticalSpacer_4);
+        verticalLayout_2->addItem(verticalSpacer_7);
 
         playButton = new QPushButton(premierInetrface);
         playButton->setObjectName("playButton");
         playButton->setBaseSize(QSize(20, 202));
-        playButton->setStyleSheet(QString::fromUtf8("background-image: url(:/photos_des_cartes/button.jpg);\n"
-""));
+        playButton->setStyleSheet(QString::fromUtf8(""));
 
         verticalLayout_2->addWidget(playButton);
 
@@ -113,6 +115,7 @@ public:
 
         verticalLayout_2->addItem(verticalSpacer_3);
 
+        verticalLayout_2->setStretch(0, 2);
         verticalLayout_2->setStretch(1, 1);
         verticalLayout_2->setStretch(3, 1);
         verticalLayout_2->setStretch(5, 1);
@@ -130,8 +133,8 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        verticalLayout->setStretch(0, 2);
-        verticalLayout->setStretch(1, 2);
+        verticalLayout->setStretch(0, 6);
+        verticalLayout->setStretch(1, 3);
         verticalLayout->setStretch(2, 6);
         verticalLayout->setStretch(3, 20);
 
@@ -153,12 +156,12 @@ public:
     void retranslateUi(QWidget *premierInetrface)
     {
         premierInetrface->setWindowTitle(QCoreApplication::translate("premierInetrface", "Form", nullptr));
-        label->setText(QCoreApplication::translate("premierInetrface", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700; font-style:italic;\">HEZ 2</span></p></body></html>", nullptr));
+        label->setText(QString());
 #if QT_CONFIG(tooltip)
         playButton->setToolTip(QCoreApplication::translate("premierInetrface", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:700; font-style:italic;\">play</span></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         playButton->setText(QString());
-        deficultyButtn->setText(QCoreApplication::translate("premierInetrface", "PushButton", nullptr));
+        deficultyButtn->setText(QString());
         quitButton->setText(QString());
     } // retranslateUi
 

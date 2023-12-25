@@ -1,9 +1,7 @@
 release/Carte.o
 release/Group.o
 release/MonQlabel.o
-release/VictoryMessage.o
 release/choixtable.o
-release/joueur.o
 release/maclasse.o
 release/main.o
 release/premierInetrface.o
@@ -13,7 +11,6 @@ release/qrc_cartes.o
 release/qrc_dek.o
 release/moc_Carte.o
 release/moc_MonQlabel.o
-release/moc_VictoryMessage.o
 release/moc_choixtable.o
 release/moc_maclasse.o
 release/moc_premierInetrface.o

@@ -80,12 +80,8 @@ public:
 
         LabelPoinC = new QLabel(MaClasse);
         LabelPoinC->setObjectName("LabelPoinC");
-        LabelPoinC->setStyleSheet(QString::fromUtf8("color: rgb(255, 55, 82);\n"
-"font: 48pt \"Segoe UI\";\n"
-"font: 700 48pt \"Bahnschrift\";\n"
-"font: 9pt \"Segoe UI\";\n"
-"background-image:initial;\n"
-"background-color: rgb(170, 0, 255);"));
+        LabelPoinC->setStyleSheet(QString::fromUtf8("font: 700 24pt \"Agency FB\";\n"
+"color: rgb(47, 61, 255);"));
 
         horizontalLayout_6->addWidget(LabelPoinC);
 
@@ -100,8 +96,7 @@ public:
 
         horizontalLayout_6->setStretch(0, 3);
         horizontalLayout_6->setStretch(1, 1);
-        horizontalLayout_6->setStretch(2, 2);
-        horizontalLayout_6->setStretch(3, 1);
+        horizontalLayout_6->setStretch(2, 3);
 
         verticalLayout_4->addLayout(horizontalLayout_6);
 
@@ -189,7 +184,7 @@ public:
         font.setBold(true);
         font.setItalic(true);
         labelCount->setFont(font);
-        labelCount->setStyleSheet(QString::fromUtf8(""));
+        labelCount->setStyleSheet(QString::fromUtf8("color:white ;"));
         labelCount->setTextFormat(Qt::RichText);
 
         horizontalLayout->addWidget(labelCount);
@@ -300,7 +295,7 @@ public:
     {
         MaClasse->setWindowTitle(QCoreApplication::translate("MaClasse", "Form", nullptr));
         LabelPoinC->setText(QCoreApplication::translate("MaClasse", "<html><head/><body><p><span style=\" font-size:36pt; font-weight:700; font-style:italic;\">COMPUTER</span></p></body></html>", nullptr));
-        QUITTER->setText(QCoreApplication::translate("MaClasse", "PushButton", nullptr));
+        QUITTER->setText(QString());
         computerLabel->setText(QCoreApplication::translate("MaClasse", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #if QT_CONFIG(tooltip)
         joeuLabel->setToolTip(QCoreApplication::translate("MaClasse", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));

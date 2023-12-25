@@ -29,15 +29,16 @@ public:
     {
         if (principal->objectName().isEmpty())
             principal->setObjectName("principal");
-        principal->resize(1104, 784);
-        principal->setStyleSheet(QString::fromUtf8("background-size: 900px; \n"
-"border-image: url(:/cartes/photos_des_cartes/fond.jpg) 0 0 0 0 stretch stretch;"));
+        principal->resize(1086, 836);
+        principal->setStyleSheet(QString::fromUtf8("\n"
+"background-size: 900px;\n"
+" border-image: url(:/cartes/photos_des_cartes/bg4.jpg) 0 0 0 0 stretch stretch;"));
         centralwidget = new QWidget(principal);
         centralwidget->setObjectName("centralwidget");
         principal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(principal);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1104, 22));
+        menubar->setGeometry(QRect(0, 0, 1086, 22));
         principal->setMenuBar(menubar);
         statusbar = new QStatusBar(principal);
         statusbar->setObjectName("statusbar");

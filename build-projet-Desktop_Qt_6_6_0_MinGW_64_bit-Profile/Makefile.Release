@@ -53,9 +53,7 @@ OBJECTS_DIR   = release
 SOURCES       = ..\projet\Carte.cpp \
 		..\projet\Group.cpp \
 		..\projet\MonQlabel.cpp \
-		..\projet\VictoryMessage.cpp \
 		..\projet\choixtable.cpp \
-		..\projet\joueur.cpp \
 		..\projet\maclasse.cpp \
 		..\projet\main.cpp \
 		..\projet\premierInetrface.cpp \
@@ -64,7 +62,6 @@ SOURCES       = ..\projet\Carte.cpp \
 		release\qrc_dek.cpp \
 		release\moc_Carte.cpp \
 		release\moc_MonQlabel.cpp \
-		release\moc_VictoryMessage.cpp \
 		release\moc_choixtable.cpp \
 		release\moc_maclasse.cpp \
 		release\moc_premierInetrface.cpp \
@@ -72,9 +69,7 @@ SOURCES       = ..\projet\Carte.cpp \
 OBJECTS       = release/Carte.o \
 		release/Group.o \
 		release/MonQlabel.o \
-		release/VictoryMessage.o \
 		release/choixtable.o \
-		release/joueur.o \
 		release/maclasse.o \
 		release/main.o \
 		release/premierInetrface.o \
@@ -84,7 +79,6 @@ OBJECTS       = release/Carte.o \
 		release/qrc_dek.o \
 		release/moc_Carte.o \
 		release/moc_MonQlabel.o \
-		release/moc_VictoryMessage.o \
 		release/moc_choixtable.o \
 		release/moc_maclasse.o \
 		release/moc_premierInetrface.o \
@@ -93,17 +87,13 @@ OBJECTS       = release/Carte.o \
 DIST          =  ..\projet\Carte.h \
 		..\projet\Group.h \
 		..\projet\MonQlabel.h \
-		..\projet\VictoryMessage.h \
 		..\projet\choixtable.h \
-		..\projet\joueur.h \
 		..\projet\maclasse.h \
 		..\projet\premierInetrface.h \
 		..\projet\principal.h ..\projet\Carte.cpp \
 		..\projet\Group.cpp \
 		..\projet\MonQlabel.cpp \
-		..\projet\VictoryMessage.cpp \
 		..\projet\choixtable.cpp \
-		..\projet\joueur.cpp \
 		..\projet\maclasse.cpp \
 		..\projet\main.cpp \
 		..\projet\premierInetrface.cpp \
@@ -128,10 +118,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) projet.zip $(SOURCES) $(DIST) ..\projet\projet.pro C:\Qt\6.6.0\mingw_64\mkspecs\features\spec_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\device_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\common\sanitize.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\gcc-base.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\g++-base.conf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.6.0\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\g++-win32.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt\6.6.0\mingw_64\mkspecs\qconfig.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversionsprivate.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversionsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchgeneratorsprivate.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchgeneratorsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\features\qt_functions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qt_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.6.0\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.6.0\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\toolchain.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\default_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resolve_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\default_post.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\build_pass.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resolve_target.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\separate_debug_info.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qtquickcompiler.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qml_debug.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\entrypoint.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\precompile_header.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\warn_on.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\permissions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qt.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resources_functions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resources.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\moc.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\opengl.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\uic.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qmake_use.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\file_copies.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\windows.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\exceptions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\yacc.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\lex.prf ..\projet\projet.pro ..\projet\DECK.qrc ..\projet\cartes.qrc ..\projet\dek.qrc C:\Qt\6.6.0\mingw_64\lib\Qt6Widgets.prl C:\Qt\6.6.0\mingw_64\lib\Qt6Gui.prl C:\Qt\6.6.0\mingw_64\lib\Qt6Core.prl C:\Qt\6.6.0\mingw_64\lib\Qt6EntryPoint.prl   ..\projet\DECK.qrc ..\projet\cartes.qrc ..\projet\dek.qrc C:\Qt\6.6.0\mingw_64\mkspecs\features\data\dummy.cpp ..\projet\Carte.h ..\projet\Group.h ..\projet\MonQlabel.h ..\projet\VictoryMessage.h ..\projet\choixtable.h ..\projet\joueur.h ..\projet\maclasse.h ..\projet\premierInetrface.h ..\projet\principal.h  ..\projet\Carte.cpp ..\projet\Group.cpp ..\projet\MonQlabel.cpp ..\projet\VictoryMessage.cpp ..\projet\choixtable.cpp ..\projet\joueur.cpp ..\projet\maclasse.cpp ..\projet\main.cpp ..\projet\premierInetrface.cpp ..\projet\principal.cpp ..\projet\choixtable.ui ..\projet\maclasse.ui ..\projet\premierInetrface.ui ..\projet\principal.ui    
+	$(ZIP) projet.zip $(SOURCES) $(DIST) ..\projet\projet.pro C:\Qt\6.6.0\mingw_64\mkspecs\features\spec_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\device_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\common\sanitize.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\gcc-base.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\g++-base.conf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\6.6.0\mingw_64\mkspecs\common\windows-vulkan.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\g++-win32.conf C:\Qt\6.6.0\mingw_64\mkspecs\common\windows-desktop.conf C:\Qt\6.6.0\mingw_64\mkspecs\qconfig.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_freetype.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_ext_libpng.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_core.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_help.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssettings.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_linguist.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_network.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_png_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatch_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversionsprivate.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchconversionsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchgeneratorsprivate.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qdoccatchgeneratorsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcompiler.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlls_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltoolingsettings_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_tools_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\6.6.0\mingw_64\mkspecs\features\qt_functions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qt_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\win32-g++\qmake.conf C:\Qt\6.6.0\mingw_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\6.6.0\mingw_64\mkspecs\features\exclusive_builds.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\toolchain.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\default_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\default_pre.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resolve_config.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\default_post.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\build_pass.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resolve_target.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\separate_debug_info.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qtquickcompiler.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qml_debug.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\entrypoint.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\precompile_header.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\warn_on.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\permissions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qt.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resources_functions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\resources.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\moc.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\opengl.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\uic.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\qmake_use.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\file_copies.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\win32\windows.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\testcase_targets.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\exceptions.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\yacc.prf C:\Qt\6.6.0\mingw_64\mkspecs\features\lex.prf ..\projet\projet.pro ..\projet\DECK.qrc ..\projet\cartes.qrc ..\projet\dek.qrc C:\Qt\6.6.0\mingw_64\lib\Qt6Widgets.prl C:\Qt\6.6.0\mingw_64\lib\Qt6Gui.prl C:\Qt\6.6.0\mingw_64\lib\Qt6Core.prl C:\Qt\6.6.0\mingw_64\lib\Qt6EntryPoint.prl   ..\projet\DECK.qrc ..\projet\cartes.qrc ..\projet\dek.qrc C:\Qt\6.6.0\mingw_64\mkspecs\features\data\dummy.cpp ..\projet\Carte.h ..\projet\Group.h ..\projet\MonQlabel.h ..\projet\choixtable.h ..\projet\maclasse.h ..\projet\premierInetrface.h ..\projet\principal.h  ..\projet\Carte.cpp ..\projet\Group.cpp ..\projet\MonQlabel.cpp ..\projet\choixtable.cpp ..\projet\maclasse.cpp ..\projet\main.cpp ..\projet\premierInetrface.cpp ..\projet\principal.cpp ..\projet\choixtable.ui ..\projet\maclasse.ui ..\projet\premierInetrface.ui ..\projet\principal.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\Carte.o release\Group.o release\MonQlabel.o release\VictoryMessage.o release\choixtable.o release\joueur.o release\maclasse.o release\main.o release\premierInetrface.o release\principal.o release\qrc_DECK.o release\qrc_cartes.o release\qrc_dek.o release\moc_Carte.o release\moc_MonQlabel.o release\moc_VictoryMessage.o release\moc_choixtable.o release\moc_maclasse.o release\moc_premierInetrface.o release\moc_principal.o
+	-$(DEL_FILE) release\Carte.o release\Group.o release\MonQlabel.o release\choixtable.o release\maclasse.o release\main.o release\premierInetrface.o release\principal.o release\qrc_DECK.o release\qrc_cartes.o release\qrc_dek.o release\moc_Carte.o release\moc_MonQlabel.o release\moc_choixtable.o release\moc_maclasse.o release\moc_premierInetrface.o release\moc_principal.o
 
 distclean: clean 
 	-$(DEL_FILE) C:\Users\hp\Desktop\projetCpp\build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile\release\projet.exe.debug .qmake.stash
@@ -159,26 +149,29 @@ release/qrc_cartes.cpp: ../projet/cartes.qrc \
 		C:/Qt/6.6.0/mingw_64/bin/rcc.exe \
 		../projet/photos_des_cartes/D6.jpg \
 		../projet/photos_des_cartes/Z10.jpg \
-		../projet/photos_des_cartes/table2.jpg \
 		../projet/photos_des_cartes/S1.jpg \
 		../projet/photos_des_cartes/Z5.jpg \
 		../projet/photos_des_cartes/Z4.jpg \
+		../projet/photos_des_cartes/choisir.png \
 		../projet/photos_des_cartes/G7.jpg \
+		../projet/photos_des_cartes/butt3.png \
 		../projet/photos_des_cartes/S11.jpg \
 		../projet/photos_des_cartes/S10.jpg \
 		../projet/photos_des_cartes/D10.jpg \
-		../projet/photos_des_cartes/table8.jpg \
 		../projet/photos_des_cartes/G1.jpg \
 		../projet/photos_des_cartes/S6.jpg \
-		../projet/photos_des_cartes/fond2.jpg \
 		../projet/photos_des_cartes/D7.jpg \
+		../projet/photos_des_cartes/facile.png \
+		../projet/photos_des_cartes/message.png \
 		../projet/photos_des_cartes/G11.jpg \
+		../projet/photos_des_cartes/pause.png \
 		../projet/photos_des_cartes/Z1.jpg \
 		../projet/photos_des_cartes/S4.jpg \
 		../projet/photos_des_cartes/S3.jpg \
 		../projet/photos_des_cartes/Z12.jpg \
-		../projet/photos_des_cartes/BOTON.jpg \
 		../projet/photos_des_cartes/bg3.jpg \
+		../projet/photos_des_cartes/TITLEPRINCIPALE.png \
+		../projet/photos_des_cartes/difficile.png \
 		../projet/photos_des_cartes/S5.jpg \
 		../projet/photos_des_cartes/Z3.jpg \
 		../projet/photos_des_cartes/images.png \
@@ -189,15 +182,14 @@ release/qrc_cartes.cpp: ../projet/cartes.qrc \
 		../projet/photos_des_cartes/G10.jpg \
 		../projet/photos_des_cartes/G12.jpg \
 		../projet/photos_des_cartes/bg2.jpg \
-		../projet/photos_des_cartes/fond.jpg \
-		../projet/photos_des_cartes/playy.png \
 		../projet/photos_des_cartes/S7.jpg \
 		../projet/photos_des_cartes/bg.jpg \
 		../projet/photos_des_cartes/S12.jpg \
 		../projet/photos_des_cartes/Z7.jpg \
 		../projet/photos_des_cartes/interface.jpg \
-		../projet/photos_des_cartes/table1.jpg \
+		../projet/photos_des_cartes/bg4.jpg \
 		../projet/photos_des_cartes/G3.jpg \
+		../projet/photos_des_cartes/butt1.png \
 		../projet/photos_des_cartes/D1.jpg \
 		../projet/photos_des_cartes/Z2.jpg \
 		../projet/photos_des_cartes/G4.jpg \
@@ -207,13 +199,11 @@ release/qrc_cartes.cpp: ../projet/cartes.qrc \
 		../projet/photos_des_cartes/G6.jpg \
 		../projet/photos_des_cartes/D11.jpg \
 		../projet/photos_des_cartes/D4.jpg \
+		../projet/photos_des_cartes/choisirTable.png \
 		../projet/photos_des_cartes/D12.jpg \
 		../projet/photos_des_cartes/Z6.jpg \
-		../projet/photos_des_cartes/PLAYBUT.png \
-		../projet/photos_des_cartes/button.jpg \
-		../projet/photos_des_cartes/play.jpg \
-		../projet/photos_des_cartes/interface.jpg \
-		../projet/photos_des_cartes/mytitle.jpg
+		../projet/photos_des_cartes/butt2\ .png \
+		../projet/photos_des_cartes/interface.jpg
 	C:\Qt\6.6.0\mingw_64\bin\rcc.exe -name cartes --no-zstd ..\projet\cartes.qrc -o release\qrc_cartes.cpp
 
 release/qrc_dek.cpp: ../projet/dek.qrc \
@@ -226,9 +216,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: C:/Qt/6.6.0/mingw_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -g -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h C:\Qt\6.6.0\mingw_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_Carte.cpp release/moc_MonQlabel.cpp release/moc_VictoryMessage.cpp release/moc_choixtable.cpp release/moc_maclasse.cpp release/moc_premierInetrface.cpp release/moc_principal.cpp
+compiler_moc_header_make_all: release/moc_Carte.cpp release/moc_MonQlabel.cpp release/moc_choixtable.cpp release/moc_maclasse.cpp release/moc_premierInetrface.cpp release/moc_principal.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_Carte.cpp release\moc_MonQlabel.cpp release\moc_VictoryMessage.cpp release\moc_choixtable.cpp release\moc_maclasse.cpp release\moc_premierInetrface.cpp release\moc_principal.cpp
+	-$(DEL_FILE) release\moc_Carte.cpp release\moc_MonQlabel.cpp release\moc_choixtable.cpp release\moc_maclasse.cpp release\moc_premierInetrface.cpp release\moc_principal.cpp
 release/moc_Carte.cpp: ../projet/Carte.h \
 		C:/Qt/6.6.0/mingw_64/include/QtCore/QString \
 		C:/Qt/6.6.0/mingw_64/include/QtCore/qstring.h \
@@ -580,183 +570,6 @@ release/moc_MonQlabel.cpp: ../projet/MonQlabel.h \
 		C:/Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\MonQlabel.h -o release\moc_MonQlabel.cpp
 
-release/moc_VictoryMessage.cpp: ../projet/VictoryMessage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qwidget.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtversionchecks.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtconfiginclude.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qconfig.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtcore-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtconfigmacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtcoreexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtdeprecationmarkers.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qassert.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtnoop.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtypes.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtversion.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtclasshelpermacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsysinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlogging.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qflags.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompare_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qconstructormacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdarwinhelpers.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qexceptionhandling.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qforeach.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qttypetraits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfunctionpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmalloc.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qminmax.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnumeric.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qoverload.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qswap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtresource.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qttranslation.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtmetamacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfunctionaltools_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstring.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qchar.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearray.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydata.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpair.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydatapointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydataops.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainertools_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qxptype_traits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20functional.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20memory.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearrayview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringfwd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20type_traits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringliteral.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlatin1stringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qanystringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qutf8stringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringtokenizer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiterator.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringlist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcoreevent.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmetatype.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompare.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdatastream.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiodevicebase.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfloat16.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmath.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiterable.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmetacontainer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainerinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtaggedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qscopeguard.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobject_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbindingstorage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmargins.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q23utility.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qaction.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qkeysequence.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qicon.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsize.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpixmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qrect.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpoint.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qcolor.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qrgb.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qrgba64.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qimage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtransform.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpolygon.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qregion.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qline.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qvariant.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdebug.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtextstream.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringconverter_base.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qshareddata_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qset.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qhash.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpalette.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qbrush.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfont.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfontinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qcursor.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qbitmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qevent.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qurl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qeventpoint.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qvector2d.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qvectornd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpointingdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qscreen.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QList \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QObject \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QRect \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QSize \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QSizeF \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/QTransform \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
-		release/moc_predefs.h \
-		C:/Qt/6.6.0/mingw_64/bin/moc.exe
-	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\VictoryMessage.h -o release\moc_VictoryMessage.cpp
-
 release/moc_choixtable.cpp: ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qmainwindow.h \
@@ -939,6 +752,8 @@ release/moc_choixtable.cpp: ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -986,8 +801,18 @@ release/moc_choixtable.cpp: ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/premierInetrface.h \
+		../projet/choixtable.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\choixtable.h -o release\moc_choixtable.cpp
@@ -1170,6 +995,8 @@ release/moc_maclasse.cpp: ../projet/maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -1220,8 +1047,19 @@ release/moc_maclasse.cpp: ../projet/maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/premierInetrface.h \
+		../projet/choixtable.h \
+		../projet/maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		../projet/jeu.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\maclasse.h -o release\moc_maclasse.cpp
@@ -1409,6 +1247,8 @@ release/moc_premierInetrface.cpp: ../projet/premierInetrface.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -1456,8 +1296,17 @@ release/moc_premierInetrface.cpp: ../projet/premierInetrface.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/premierInetrface.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\premierInetrface.h -o release\moc_premierInetrface.cpp
@@ -1646,6 +1495,8 @@ release/moc_principal.cpp: ../projet/principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -1693,9 +1544,16 @@ release/moc_principal.cpp: ../projet/principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		../projet/principal.h \
 		../projet/jeu.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
 		release/moc_predefs.h \
 		C:/Qt/6.6.0/mingw_64/bin/moc.exe
 	C:\Qt\6.6.0\mingw_64\bin\moc.exe $(DEFINES) --include C:/Users/hp/Desktop/projetCpp/build-projet-Desktop_Qt_6_6_0_MinGW_64_bit-Profile/release/moc_predefs.h -IC:/Qt/6.6.0/mingw_64/mkspecs/win32-g++ -IC:/Users/hp/Desktop/projetCpp/projet -IC:/Qt/6.6.0/mingw_64/include -IC:/Qt/6.6.0/mingw_64/include/QtWidgets -IC:/Qt/6.6.0/mingw_64/include/QtGui -IC:/Qt/6.6.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\projet\principal.h -o release\moc_principal.cpp
@@ -2090,6 +1948,8 @@ release/Group.o: ../projet/Group.cpp ../projet/Group.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
 		../projet/jeu.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Group.o ..\projet\Group.cpp
@@ -2263,181 +2123,6 @@ release/MonQlabel.o: ../projet/MonQlabel.cpp ../projet/MonQlabel.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.6.0/mingw_64/include/QtCore/Qdebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\MonQlabel.o ..\projet\MonQlabel.cpp
-
-release/VictoryMessage.o: ../projet/VictoryMessage.cpp ../projet/VictoryMessage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qwidget.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qglobal.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtversionchecks.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtconfiginclude.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qconfig.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtcore-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtconfigmacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtcoreexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtdeprecationmarkers.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qassert.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtnoop.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtypes.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtversion.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtclasshelpermacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsysinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlogging.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qflags.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompare_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qconstructormacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdarwinhelpers.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qexceptionhandling.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qforeach.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qttypetraits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfunctionpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmalloc.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qminmax.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnumeric.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qoverload.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qswap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtresource.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qttranslation.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qversiontagging.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtgui-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtguiexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnamespace.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtmetamacros.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfunctionaltools_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobject.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstring.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qchar.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearray.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qrefcount.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydata.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpair.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydatapointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qarraydataops.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainertools_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qxptype_traits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20functional.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20memory.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearrayview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringfwd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q20type_traits.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringliteral.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlatin1stringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qanystringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qutf8stringview.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringtokenizer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qlist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiterator.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringlist.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qalgorithms.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcoreevent.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmetatype.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcompare.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdatastream.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiodevicebase.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qfloat16.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmath.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiterable.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmetacontainer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontainerinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtaggedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qscopeguard.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qobject_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qbindingstorage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmargins.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/q23utility.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qaction.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qkeysequence.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qicon.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsize.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpixmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qrect.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpoint.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qcolor.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qrgb.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qrgba64.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qimage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpixelformat.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtransform.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpolygon.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qregion.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qline.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qvariant.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qdebug.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qtextstream.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qstringconverter_base.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qshareddata_impl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qset.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qhash.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpalette.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qbrush.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfont.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qfontinfo.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qcursor.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qbitmap.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qevent.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qiodevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qpointer.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qurl.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qeventpoint.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qvector2d.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qvectornd.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpointingdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputdevice.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qscreen.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QList \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QObject \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QRect \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QSize \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QSizeF \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/QTransform \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/qnativeinterface.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QLabel \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qpicture.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/qtextdocument.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayout.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\VictoryMessage.o ..\projet\VictoryMessage.cpp
 
 release/choixtable.o: ../projet/choixtable.cpp ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -2621,6 +2306,8 @@ release/choixtable.o: ../projet/choixtable.cpp ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -2668,18 +2355,21 @@ release/choixtable.o: ../projet/choixtable.cpp ../projet/choixtable.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/premierInetrface.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
-		ui_choixtable.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		ui_choixtable.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QSpacerItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\choixtable.o ..\projet\choixtable.cpp
-
-release/joueur.o: ../projet/joueur.cpp ../projet/joueur.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\joueur.o ..\projet\joueur.cpp
 
 release/maclasse.o: ../projet/maclasse.cpp ../projet/maclasse.h \
 		../projet/Group.h \
@@ -2859,6 +2549,8 @@ release/maclasse.o: ../projet/maclasse.cpp ../projet/maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QMainWindow \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -2909,8 +2601,18 @@ release/maclasse.o: ../projet/maclasse.cpp ../projet/maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/premierInetrface.h \
+		../projet/choixtable.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
 		ui_maclasse.h \
 		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QSpacerItem \
@@ -3126,6 +2828,8 @@ release/main.o: ../projet/main.cpp ../projet/jeu.h \
 		../projet/choixtable.h \
 		../projet/maclasse.h \
 		../projet/Group.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -3151,8 +2855,14 @@ release/main.o: ../projet/main.cpp ../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QScrollArea \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QHBoxLayout \
-		../projet/VictoryMessage.h \
-		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\projet\main.cpp
 
 release/premierInetrface.o: ../projet/premierInetrface.cpp ../projet/premierInetrface.h \
@@ -3338,6 +3048,8 @@ release/premierInetrface.o: ../projet/premierInetrface.cpp ../projet/premierInet
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -3385,16 +3097,20 @@ release/premierInetrface.o: ../projet/premierInetrface.cpp ../projet/premierInet
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
+		../projet/principal.h \
+		../projet/jeu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
-		ui_premierInetrface.h \
-		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
+		ui_premierInetrface.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QSpacerItem \
-		../projet/principal.h \
-		../projet/jeu.h
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\premierInetrface.o ..\projet\premierInetrface.cpp
 
 release/principal.o: ../projet/principal.cpp ../projet/principal.h \
@@ -3581,6 +3297,8 @@ release/principal.o: ../projet/principal.cpp ../projet/principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QVector \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QListWidget \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistwidget.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qlistview.h \
@@ -3628,8 +3346,14 @@ release/principal.o: ../projet/principal.cpp ../projet/principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../projet/VictoryMessage.h \
 		C:/Qt/6.6.0/mingw_64/include/QtGui/QResizeEvent \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QDialog \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.6.0/mingw_64/include/QtGui/QFont \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QMetaObject \
 		../projet/jeu.h \
 		ui_principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtCore/QVariant \
@@ -3637,7 +3361,8 @@ release/principal.o: ../projet/principal.cpp ../projet/principal.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qmenu.h \
 		C:/Qt/6.6.0/mingw_64/include/QtWidgets/QStatusBar \
-		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qstatusbar.h
+		C:/Qt/6.6.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/6.6.0/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\principal.o ..\projet\principal.cpp
 
 release/qrc_DECK.o: release/qrc_DECK.cpp 
@@ -3654,9 +3379,6 @@ release/moc_Carte.o: release/moc_Carte.cpp
 
 release/moc_MonQlabel.o: release/moc_MonQlabel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_MonQlabel.o release\moc_MonQlabel.cpp
-
-release/moc_VictoryMessage.o: release/moc_VictoryMessage.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_VictoryMessage.o release\moc_VictoryMessage.cpp
 
 release/moc_choixtable.o: release/moc_choixtable.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_choixtable.o release\moc_choixtable.cpp
